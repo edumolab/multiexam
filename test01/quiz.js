@@ -85,7 +85,6 @@ var TextSize=document.getElementById("question-bar");
  }
 
  //Fullscreen
-document.getElementById("full-screen").innerHTML=`<i class="fa fa-compress"></i>`
  function toggleFullScreen() {
 	if (!document.fullscreenElement) {
 	  document.documentElement.requestFullscreen();
