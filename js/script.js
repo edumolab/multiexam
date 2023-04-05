@@ -10,6 +10,16 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
     var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
+  var today=new Date();
+  var year=today.getFullYear();
+  var month=today.getMonth();
+  var data=today.getDate()
+  var hour=today.getHours();
+  var minutes=today.getMinutes();
+
+  var sana=`Topshirdi: ${hour}:${minutes}, ${data}.${month}.${year}`
+  
+  var result=`${username}<br>${sana}`
 
   for (var i = 0; i < users.length; i++) {
     if (users[i].username === username && users[i].password === password) {
