@@ -23,7 +23,7 @@ form.addEventListener("submit", function(event) {
 
   for (var i = 0; i < users.length; i++) {
     if (users[i].username === username && users[i].password === password) {
-    const links=['test01/index.html', 'test002/index.html', ]
+    const links=['test01/index.html', 'test002/index.html', 'test03/index.html' ]
 	const random=Math.floor(Math.random()*links.length)
 	var randomLink=links[random]
       window.location.href = randomLink;
