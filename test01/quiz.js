@@ -92,7 +92,7 @@ var TextSize=document.getElementById("question-bar");
 	  document.getElementById("full-screen").classList.add("fa-compress")
 	} else if (document.exitFullscreen) {
 	  document.exitFullscreen();
-	  document.getElementById("full-screen").classList.add("fa-expand)
+	  document.getElementById("full-screen").classList.add("fa-expand")
 	}
   }
   
