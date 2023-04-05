@@ -19,7 +19,7 @@ form.addEventListener("submit", function(event) {
 
   var sana=`Topshirdi: ${hour}:${minutes}, ${data}.${month}.${year}`
   
-  var result=`${username}+"<br>"+${sana}`
+  var result=username+"<br>"+sana
 
   for (var i = 0; i < users.length; i++) {
     if (users[i].username === username && users[i].password === password) {
