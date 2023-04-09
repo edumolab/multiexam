@@ -131,14 +131,12 @@ function startCountdown() {
 		
 		recicon.style.display="block"
 		rectext.style.display="block";
-		waveBar.style.display="block"
 		let count = 30;
 		timer.innerHTML = ` ${count}  LEFT`;
 		const interval = setInterval(() => {
 		  count--;
 		  timer.innerHTML = `${count} LEFT`;
 		  if (count <= 0) {
-			waveBar.style.display="none"
 		recicon.style.display="none"
 		rectext.style.display="none"
 			timer.innerHTML="";
@@ -174,7 +172,6 @@ function step1(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 		recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -184,7 +181,6 @@ function step1(){
 			 
 			  timer.innerHTML = `${count} LEFT`;
 			  if (count <= 0) {	
-				waveBar.style.display="none"
 			recicon.style.display="none"
 			rectext.style.display="none"
 				timer.innerHTML="";
@@ -221,7 +217,6 @@ function step2(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -230,7 +225,6 @@ function step2(){
 			  count--;
 			  timer.innerHTML = `${count} LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -267,7 +261,6 @@ function step3(){
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
 			recicon.style.display="block"
-			waveBar.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
 			timer.innerHTML = ` ${count} sec LEFT`;
@@ -275,7 +268,6 @@ function step3(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -313,7 +305,6 @@ function step4(){
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
 			recicon.style.display="block"
-			waveBar.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
 			timer.innerHTML = ` ${count} sec LEFT`;
@@ -322,7 +313,6 @@ function step4(){
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
 				recicon.style.display="none"
-				waveBar.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
 				clearInterval(interval);
@@ -359,7 +349,6 @@ function step5(){
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
 			recicon.style.display="block"
-			waveBar.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
 			timer.innerHTML = ` ${count} sec LEFT`;
@@ -368,7 +357,6 @@ function step5(){
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
 				recicon.style.display="none"
-				waveBar.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
 				clearInterval(interval);
@@ -415,7 +403,6 @@ function step6(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 120;
@@ -424,7 +411,6 @@ function step6(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -474,7 +460,6 @@ function step7(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -483,7 +468,6 @@ function step7(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -522,7 +506,6 @@ function step8(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -531,7 +514,6 @@ function step8(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -568,7 +550,6 @@ function step9(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -577,7 +558,6 @@ function step9(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -614,7 +594,6 @@ function step10(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -623,7 +602,6 @@ function step10(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -661,7 +639,6 @@ function step11(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
-			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -670,7 +647,6 @@ function step11(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
-				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -703,8 +679,4 @@ function examEnd(){
 		  }
 		}, 1000);
 }
-};
-
-
-
-
+}
