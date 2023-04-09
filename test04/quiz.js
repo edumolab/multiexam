@@ -20,7 +20,8 @@ const audio13=document.getElementById("audio_13");
 const audio14=document.getElementById("audio_14");
 const audio15=document.getElementById("audio_15");
 const recicon=document.getElementById("rec-icon")
-const rectext=document.getElementById("rec-text")
+const rectext=document.getElementById("rec-text");
+const waveBar=document.getElementById("waveform")
 const beep=document.getElementById("beep");
 const timer=document.getElementById("timer");
 const que_id=document.getElementById("que-id");
@@ -130,14 +131,15 @@ function startCountdown() {
 	function start30SecondCountdown() {
 		
 		recicon.style.display="block"
-		rectext.style.display="block"
+		rectext.style.display="block";
+		waveBar.style.display="block"
 		let count = 30;
 		timer.innerHTML = ` ${count}  LEFT`;
 		const interval = setInterval(() => {
 		  count--;
 		  timer.innerHTML = `${count} LEFT`;
 		  if (count <= 0) {
-			
+			waveBar.style.display="none"
 		recicon.style.display="none"
 		rectext.style.display="none"
 			timer.innerHTML="";
@@ -173,6 +175,7 @@ function step1(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 		recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -182,6 +185,7 @@ function step1(){
 			 
 			  timer.innerHTML = `${count} LEFT`;
 			  if (count <= 0) {	
+				waveBar.style.display="none"
 			recicon.style.display="none"
 			rectext.style.display="none"
 				timer.innerHTML="";
@@ -218,6 +222,7 @@ function step2(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -226,6 +231,7 @@ function step2(){
 			  count--;
 			  timer.innerHTML = `${count} LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -262,6 +268,7 @@ function step3(){
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
 			recicon.style.display="block"
+			waveBar.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
 			timer.innerHTML = ` ${count} sec LEFT`;
@@ -269,6 +276,7 @@ function step3(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -306,6 +314,7 @@ function step4(){
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
 			recicon.style.display="block"
+			waveBar.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
 			timer.innerHTML = ` ${count} sec LEFT`;
@@ -314,6 +323,7 @@ function step4(){
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
 				recicon.style.display="none"
+				waveBar.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
 				clearInterval(interval);
@@ -350,6 +360,7 @@ function step5(){
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
 			recicon.style.display="block"
+			waveBar.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
 			timer.innerHTML = ` ${count} sec LEFT`;
@@ -358,6 +369,7 @@ function step5(){
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
 				recicon.style.display="none"
+				waveBar.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
 				clearInterval(interval);
@@ -404,6 +416,7 @@ function step6(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 120;
@@ -412,6 +425,7 @@ function step6(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -461,6 +475,7 @@ function step7(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -469,6 +484,7 @@ function step7(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -507,6 +523,7 @@ function step8(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -515,6 +532,7 @@ function step8(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -551,6 +569,7 @@ function step9(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -559,6 +578,7 @@ function step9(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -595,6 +615,7 @@ function step10(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -603,6 +624,7 @@ function step10(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -640,6 +662,7 @@ function step11(){
 	
 		// Define a function to start the 30-second countdown
 		function start30SecondCountdown() {
+			waveBar.style.display="block"
 			recicon.style.display="block"
 		rectext.style.display="block"
 			let count = 30;
@@ -648,6 +671,7 @@ function step11(){
 			  count--;
 			  timer.innerHTML = `${count} sec LEFT`;
 			  if (count <= 0) {
+				waveBar.style.display="none"
 				recicon.style.display="none"
 		rectext.style.display="none"
 				timer.innerHTML="";
@@ -669,11 +693,11 @@ function examEnd(){
 	audio15.addEventListener("ended", startCountdown);
 	//countdown 25 sec
 	function startCountdown() {
+		timer.innerHTML = `Please download your answer! We'll direct to result page in ${count} seconds`;
 		let count = 25;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
 		  count--;
-		timer.innerHTML = `Please download your answer! We'll redirect home page in ${count} seconds`;
 		  if (count <= 0) {
 			clearInterval(interval);
 			window.location.href="../index.html"
@@ -681,3 +705,59 @@ function examEnd(){
 		}, 1000);
 }
 }
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+let wavesurfer, context, processor;
+
+    function recVisual() {
+        if (wavesurfer === undefined) {
+            if (isSafari) {
+                // Safari 11 or newer automatically suspends new AudioContext's that aren't
+                // created in response to a user-gesture, like a click or tap, so create one
+                // here (inc. the script processor)
+                let AudioContext =
+                    window.AudioContext || window.webkitAudioContext;
+                context = new AudioContext();
+                processor = context.createScriptProcessor(1024, 1, 1);
+            }
+
+            // Init wavesurfer
+            wavesurfer = WaveSurfer.create({
+                container: '#waveform',
+                waveColor: 'red',
+                interact: false,
+                cursorWidth: 0,
+                audioContext: context || null,
+                audioScriptProcessor: processor || null,
+                plugins: [
+                    WaveSurfer.microphone.create({
+                        bufferSize: 4096,
+                        numberOfInputChannels: 1,
+                        numberOfOutputChannels: 1,
+                        constraints: {
+                            video: false,
+                            audio: true
+                        }
+                    })
+                ]
+            });
+
+            wavesurfer.microphone.on('deviceReady', function() {
+                console.info('Device ready!');
+            });
+            wavesurfer.microphone.on('deviceError', function(code) {
+                console.warn('Device error: ' + code);
+            });
+            wavesurfer.on('error', function(e) {
+                console.warn(e);
+            });
+            wavesurfer.microphone.start();
+        } else {
+            // start/stop mic on button click
+            if (wavesurfer.microphone.active) {
+                wavesurfer.microphone.stop();
+            } else {
+                wavesurfer.microphone.start();
+            }
+        }
+    };
+	recVisual();
