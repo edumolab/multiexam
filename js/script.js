@@ -1,7 +1,7 @@
 var users = [
     {username: "oyjamol", password: "1234"},
     {username: "user2", password: "8888"},
-    {username: "user3", password: "123456"}
+    {username: "smartland", password: "123456"}
   ];
 
 var form = document.getElementById("myForm");
