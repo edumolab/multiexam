@@ -608,21 +608,11 @@ function examEnd(){
 	audio15.play();
 	que.innerHTML='';
 	que_id.innerHTML='';
-	preview .style.display="block";
+	
+	audio15.addEventListener("ended", function(){
+		stopRecording();
+		preview .style.display="block";
 	downloadAudio .style.display="block";
-	stopRecording();
-	audio15.addEventListener("ended", startCountdown);
-	//countdown 25 sec
-	function startCountdown() {
-		let count = 25;
-		timer.innerHTML += `${count} seconds`;
-		const interval = setInterval(() => {
-		  count--;
-		  timer.innerHTML = `Please download your answer! We'll redirect home page in ${count} seconds`;
-		  if (count <= 0) {
-			clearInterval(interval);
-			window.location.href="../index.html"
-		  }
-		}, 1000);
-}
+	});
+	
 }
