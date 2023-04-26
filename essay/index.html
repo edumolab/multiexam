@@ -114,6 +114,7 @@ var x = setInterval(function() {
 
 document.getElementById("start-btn").addEventListener("click", function(){
   countdownTime();
+  document.querySelector("#send-btn").disabled=false;
   document.querySelector("#start-btn").style.display="none";
   document.getElementById("writing").disabled=false;
   alert("Vaqt tugagandan so'ng, javobni yubora olasiz!")
@@ -123,7 +124,6 @@ document.getElementById("start-btn").addEventListener("click", function(){
 
 
  function showSend(){
- document.querySelector("#send-btn").disabled=false;
   var textArea=document.getElementById("writing").value
   if(textArea==""){
     alert("Blank answer can't be sent")
