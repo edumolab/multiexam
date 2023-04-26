@@ -153,6 +153,7 @@ function sendData(){
     .then(response => {
 
       alert("Sent Successfully!");
+	  document.querySelector("#send-btn").disabled=true;
       if (!response.ok) {
         throw new Error('Failed to send message');
        alert("Oh, Failed!");
@@ -167,7 +168,7 @@ function sendData(){
 
 //hide func
 
- /*
+
 // Disable right-click
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 
@@ -186,7 +187,7 @@ document.onkeydown = (e) => {
   )
     return false;
 };
-*/
+
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@grammarly/editor-sdk?clientId=client_9RyqGXjwEswHovZhL8F3Ym"></script>
