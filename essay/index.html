@@ -114,10 +114,10 @@ var x = setInterval(function() {
 
 document.getElementById("start-btn").addEventListener("click", function(){
   countdownTime();
-  document.querySelector("#send-btn").disabled=false;
   document.querySelector("#start-btn").style.display="none";
   document.getElementById("writing").disabled=false;
   alert("Vaqt tugagandan so'ng, javobni yubora olasiz!")
+document.querySelector("#send-btn").disabled=false;
 
 });
 
@@ -167,7 +167,7 @@ function sendData(){
 
 //hide func
 
- 
+ /*
 // Disable right-click
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 
@@ -186,7 +186,7 @@ document.onkeydown = (e) => {
   )
     return false;
 };
-
+*/
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@grammarly/editor-sdk?clientId=client_9RyqGXjwEswHovZhL8F3Ym"></script>
