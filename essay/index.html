@@ -38,14 +38,28 @@
           align-items: center;
           justify-content: center;
         }
+#img-success{
+  display: none;
+}
 
-    </style>
+#download-btn{
+  display: none;
+}
+
+#success-text{
+  display: none;
+}
+
+</style>
 </head>
 <body>
 <nav class="navbar bg-white shadow-sm justify-content-between align-items-center">
     <a href="javascript:void()" class="navbar-brand mx-4">Exam Online</a>
 </nav>
+<center><img id="img-success" class="img rounded-circle my-3" src="congratulations.svg"></center>
+<h3 class="text-success text-center" id="success-text">Sent Successfully</h3>
 <div class="container mt-4">
+ 
 <p id="essay-que"></p>
 <div class="d-flex justify-content-between align-items-center">
 <div id="word_count" class="bg-primary text-center px-5 py-2 my-4 text-white fw-bold"> Words: 0</div>
@@ -60,6 +74,7 @@
 
 <div class="footer">
   <button id="start-btn" class="btn mx-2 btn-primary px-4">Start</button>
+  <button id="download-btn" class="btn btn-info" onclick="downloadAsDoc()">Download</button>
   <button onclick="showSend()" disabled  type="button"  id="send-btn" class="btn mx-2 text-white"  style="background: rgb(12, 214, 137);"><svg fill="white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12.45 16h2.09L9.43 3H7.57L2.46 16h2.09l1.12-3h5.64l1.14 3zm-6.02-5L8.5 5.48 10.57 11H6.43zm15.16.59l-8.09 8.09L9.83 16l-1.41 1.41 5.09 5.09L23 13l-1.41-1.41z"></path></svg>&nbsp; Send For Checking</button>
 </div>
 <script>
@@ -129,41 +144,69 @@ document.querySelector("#send-btn").disabled=false;
   }
   else{
     sendData();
-    document.getElementById("writing").disabled=true
     document.getElementById("timer").style.display="none"
   }
 }
 
 function sendData(){
-  const botApiToken = '5958284810:AAG8rgBipqXomln5MxLqqDcP1vTFm0oaNiQ';
+  const token = '5958284810:AAG8rgBipqXomln5MxLqqDcP1vTFm0oaNiQ';
   const chatId = '1483919112';
-  const input = document.getElementById('writing').value;
+  const input = document.getElementById('writing');
+  const essayAnswer=input.value;
   const title=document.getElementById("essay-que")
   var titleName=title.innerHTML
   const imagine= document.getElementById("happy");
-  const sentbtn=document.getElementById("sent")
-  const essayfull=titleName +" "+input
+  const essayfull=`Q: ${titleName} Answer: ${essayAnswer}`
   console.log(essayfull)
  
 
-  const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${essayfull}`;
+fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ chat_id: chatId, text: essayfull })
+})
+  .then(response => {
+    document.querySelector("#send-btn").disabled=true;
+    document.getElementById("download-btn").style.display="inline-block"
+    document.getElementById("img-success").style.display="block";
+    document.getElementById("success-text").style.display="block"
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    console.log('Message sent!');
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
-  fetch(url)
-    .then(response => {
-
-      alert("Sent Successfully!");
-	  document.querySelector("#send-btn").disabled=true;
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-       alert("Oh, Failed!");
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
 }
 
 
+
+//Download as docs
+
+
+function downloadAsDoc() {
+  const text = document.querySelector('#writing').value;
+  
+  const doc = new Blob(['\ufeff', text], {type:'application/msword'});
+  const url = URL.createObjectURL(doc);
+  
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'document.doc';
+  document.body.appendChild(link);
+  link.click();
+  
+  setTimeout(() => {
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);  
+  }, 0);
+}
+
+
+
+/*
 
 //hide func
 
@@ -187,7 +230,7 @@ document.onkeydown = (e) => {
     return false;
 };
 
-
+*/
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@grammarly/editor-sdk?clientId=client_9RyqGXjwEswHovZhL8F3Ym"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
