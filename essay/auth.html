@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form id="register-form">
+		<div>
+		  <label for="email">Email</label>
+		  <input type="email" id="email" name="email" required>
+		</div>
+		<div>
+		  <label for="password">Password</label>
+		  <input type="password" id="password" name="password" minlength="6" required>
+		</div>
+		<div>
+		  <label for="password-confirm">Confirm Password</label>
+		  <input type="password" id="password-confirm" name="password-confirm" minlength="6" required>
+		</div>
+		<button type="submit">Register</button>
+	  </form>
+	  
+	  <h4>Login</h4>
+
+	  <form id="login-form">
+		<div>
+		  <label for="email">Email</label>
+		  <input type="email" id="email" name="email" required>
+		</div>
+		<div>
+		  <label for="password">Password</label>
+		  <input type="password" id="password" name="password" minlength="6" required>
+		</div>
+		<button type="submit">Login</button>
+	  </form>
+<script type="module">
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCPcm6WOfOOwzKBRBqNxgB71ea2TduQ-Qg",
+  authDomain: "exam-online-384406.firebaseapp.com",
+  projectId: "exam-online-384406",
+  storageBucket: "exam-online-384406.appspot.com",
+  messagingSenderId: "685614981927",
+  appId: "1:685614981927:web:3cba11674fdc0391723f02",
+  measurementId: "G-B2P1J1FSK7"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+</script>
+<script src="auth.js"></script>
+</body>
+</html>
