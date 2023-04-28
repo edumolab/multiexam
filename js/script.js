@@ -1,6 +1,6 @@
 var users = [
     {username: "oyjamol", password: "1234"},
-    {username: "user2", password: "8888"},
+    {username: "biyniyaz", password: "88888"},
     {username: "smartland", password: "123456"}
   ];
 
@@ -23,10 +23,7 @@ form.addEventListener("submit", function(event) {
 
   for (var i = 0; i < users.length; i++) {
     if (users[i].username === username && users[i].password === password) {
-    const links=['test01/index.html', 'test002/index.html', 'test03/index.html', 'test04/index.html' ]
-	const random=Math.floor(Math.random()*links.length)
-	var randomLink=links[random]
-      window.location.href = randomLink;
+      window.location.href="home.html"
 
       //send tg username
       const botApiToken = '6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk';

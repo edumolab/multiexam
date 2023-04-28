@@ -610,5 +610,9 @@ function examEnd(){
 	que_id.innerHTML='';
 	preview .style.display="block";
 	downloadAudio .style.display="block";
-	audio15.addEventListener("ended",stopRecording);		
+	audio15.addEventListener("ended",function(){
+		stopRecording();
+		document.getElementById("home").style.display="block"
+
+});		
 }

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+rel="stylesheet"
+/>
+
+<style>
+    .card{
+        cursor: pointer;
+
+    }
+  .container{
+    margin-bottom: 120px;
+  }
+  a{
+    text-decoration: none;
+    color: transparent;
+  }
+
+  
+.footer-menu{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height: 60px;
+    z-index: 999;
+    position: fixed;
+    padding:0 5px;
+    bottom: 0;
+    left:0;
+    background-color: rgb(255, 255, 255);
+    box-shadow:0 -4px 5px rgba(177, 177, 177, 0.5);
+}
+
+.link{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  color:rgb(160, 159, 159);
+  text-decoration: none;
+}
+
+.link>span{
+  font-size:12px;
+}
+
+.link-active{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  color:rgb(30, 48, 80);
+}
+
+.icon-menu{
+  font-size:22px;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid" style="margin-bottom: 120px;">
+    <nav class="navbar bg-white shadow-sm fixed-top">
+        <a class="navbar-brand mx-4 " href="javascript:void()">ExamOnline Pro</a>
+    </nav>
+    <div class="d-md-flex my-5 pt-5 d-sm-block justify-content-center">
+        
+    <a href="" onclick="splink()" id="sp-link">
+        <div class="card my-2 badge-info">
+            <div class="card-body text-center">
+                <h2>Speaking</h2>
+            </div>
+        </div>
+    </a>
+    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">    
+        <div class="card my-2 badge-danger">
+            <div class="card-body text-center">
+                <h2>Writing Checker</h2>
+            </div>
+        </div>
+    </a>
+    <a href="javascript:void()">    
+        <div class="card mt-2 badge-success">
+            <div class="card-body text-center">
+                <h2>Reading</h2>
+                <span class="badge badge-info">Tez kunda</span>
+            </div>
+        </div>
+    </a>
+    </div>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enter Credentials</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <input type="password" class="form-control" id="wr-link" placeholder="Type password">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="wrlink()">Enter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal-ends--->
+<!------
+<div class="footer-menu">
+    <div class=" menu"><a class="link" href="https://multilevel.vercel.app/"> <i class="fa fa-home icon-menu"></i><span>Home</span></a></div>
+    <div class=" menu "><a class="link link-active" href="skills.html"><i class="fa fa-tasks icon-menu"></i><span>Skills</span></a></div>
+    <div class=" menu"><a class="link" href="index.html"><i class="fas fa-book-open icon-menu"></i><span>Topics</span></a></div>
+</div>
+------->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    function splink(){
+    var splink=document.getElementById("sp-link")
+    const links=['test01/index.html', 'test002/index.html', 'test03/index.html', 'test04/index.html' ]
+    const random=Math.floor(Math.random()*links.length)
+    var randomLink=links[random]
+      splink.href = randomLink;
+
+    }  
+
+
+
+//writing
+
+var users = [
+    {password: "1234"},
+    {password: "8888"},
+    {password: "123456"}
+  ];
+
+    function wrlink(){
+        var wrlink=document.getElementById("wr-link").value
+
+
+        for (var i = 0; i < users.length; i++) {
+    if (users[i].password === wrlink) {
+      window.location.href="essay/index.html"
+
+      //send tg username
+      const botApiToken = '6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk';
+  const chatId = '1483919112';
+  const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${wrlink}`;
+
+  fetch(url)
+    .then(response => {
+      console.log("Sent Successfully!")
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+      return;
+    }
+    else if(wrlink==""){
+       document.getElementById("wr-link").style.borderColor="red"
+       document.getElementById("wr-link").style.borderWidth="2px"
+       document.getElementById("wr-link").style.borderStyle="solid"
+    }
+    else{
+           document.getElementById("wr-link").style.borderColor="red"
+       document.getElementById("wr-link").style.borderWidth="2px"
+       document.getElementById("wr-link").style.borderStyle="solid"   
+    }
+    }
+
+
+    }
+      </script>
+    
+</body>
+</html>

@@ -662,11 +662,11 @@ function examEnd(){
 	audio15.play();
 	que.innerHTML='';
 	que_id.innerHTML='';
-	
-	audio15.addEventListener("ended", function(){
-		stopRecording();
-		preview .style.display="block";
+	preview .style.display="block";
 	downloadAudio .style.display="block";
-	});
-	
+	audio15.addEventListener("ended",function(){
+		stopRecording();
+		document.getElementById("home").style.display="block"
+
+});		
 }
