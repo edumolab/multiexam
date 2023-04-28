@@ -1,7 +1,6 @@
 var users = [
     {username: "oyjamol", password: "1234"},
     {username: "luiza", password: "88888"},
-    {username: "asadbek", password: "123456"},
     {username: "humoyun", password: "11111"},
     {username: "samoyiddin", password: "12345"},
   ];
