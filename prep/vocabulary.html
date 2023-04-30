@@ -27,6 +27,47 @@
             padding-bottom:120px;
             bottom: 59px;
         }
+
+.footer-menu{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height: 60px;
+    z-index: 999;
+    position: fixed;
+    padding:0 5px;
+    bottom: 0;
+    left:0;
+    background-color: rgb(255, 255, 255);
+    box-shadow:0 -4px 5px rgba(177, 177, 177, 0.5);
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+}
+
+.link{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  color:rgb(160, 159, 159);
+  text-decoration: none;
+}
+
+.link>span{
+  font-size:12px;
+}
+
+.link-active{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  color:rgb(30, 48, 80);
+}
+
+.icon-menu{
+  font-size:22px;
+}
+	    
     </style>
     <title>Multi-Level Practice | Edumo</title>
 </head>
@@ -64,11 +105,12 @@
             
     </ons-page>
    
-    <div class="footer-menu">
-        <div class=" menu"><a class="link" href="https://multilevel.vercel.app/"> <i class="fa fa-home icon-menu"></i><span>Home</span></a></div>
-        <div class=" menu "><a class="link" href="https://multilevel.vercel.app/skills.html"><i class="fa fa-tasks icon-menu"></i><span>Skills</span></a></div>
-        <div class=" menu"><a class="link" href="index.html"><i class="fas fa-book-open icon-menu"></i><span>Topics</span></a></div>
- </div>
+ <div class="footer-menu">
+  <div class=" menu"><a class="link link-active href="https://multiexam.vercel.app/"> <i class="fa fa-home icon-menu"></i><span>Home</span></a></div>
+  <div class=" menu "><a class="link" onclick="randomTest()"><i class="fas fa-microscope icon-menu"></i><span>Practice</span></a></div>
+  <div class=" menu"><a class="link" href="exam/index.html"><i class="fas fa-book-reader icon-menu"></i><span>Q&A</span></a></div>
+  <div class=" menu"><a class="link" href="prep/vocabulary.html"><i class="fa fa-language icon-menu"></i><span>Vocabulary</span></a></div>
+</div>
     <script>
         function testOne(){
             window.location.href="base/accommodation.html"
