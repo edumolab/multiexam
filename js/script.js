@@ -5,7 +5,8 @@ var users = [
     {username: "samoyiddin", password: "12345"},
     {username: "erkaboyeva", password: "sarvinoz"},
     {username: "ekaterina", password: "1234"},
-    {username: "mohinur", password: "123344"}
+    {username: "mohinur", password: "123344"},
+    {username: "user1", password: "1234"},
     
   ];
 
@@ -22,16 +23,16 @@ form.addEventListener("submit", function(event) {
   var hour=today.getHours();
   var minutes=today.getMinutes();
 
-  var sana=`Topshirdi: ${hour}:${minutes}, ${data}.${month}.${year}`
+  var sana=`${hour}:${minutes}, ${data}.${month}.${year}`
   
-  var result=username+"<br>"+sana
+  var result=`${username} ${sana} da topshirdi`
 
   for (var i = 0; i < users.length; i++) {
     if (users[i].username === username && users[i].password === password) {
       window.location.href="home.html"
 
       //send tg username
-      const botApiToken = '6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk';
+      const botApiToken = '6286896160:AAEDJPAnegyosnf4KlYbBMTJayMJxXggMvg';
   const chatId = '1483919112';
   const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${result}`;
 
@@ -57,4 +58,3 @@ form.addEventListener("submit", function(event) {
     // If the function hasn't returned yet, it means the entered password is invalid
     document.getElementById("alert").innerHTML="Invalid login credentials"; // Display error message
   });
-
