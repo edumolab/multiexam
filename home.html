@@ -35,28 +35,27 @@ rel="stylesheet"
   }
 /*
   
+
 .footer-menu{
     width: 100%;
     display: flex;
     justify-content:space-around;
     align-items: center;
-    height: 70px;
+    height: 60px;
     z-index: 999;
     position: fixed;
     padding:0 5px;
     bottom: 0;
     left:0;
-    border-top-left-radius: 30px;
-    background-color:aquamarine;
-    border-top-right-radius: 30px;
-    box-shadow: 0 -4px 5px  rgba(224, 224, 224, 0.349);
+    background-color: rgb(255, 255, 255);
+    box-shadow:0 -4px 5px rgba(177, 177, 177, 0.5);
 }
-*/
+
 .link{
   display: flex;
   flex-direction:column;
   text-align: center;
-  color:rgb(7, 100, 96);
+  color:rgb(160, 159, 159);
   text-decoration: none;
 }
 
@@ -64,44 +63,27 @@ rel="stylesheet"
   font-size:12px;
 }
 
-
 .link-active{
   display: flex;
   flex-direction:column;
   text-align: center;
-  color: rgb(9, 158, 108)
+  color:rgb(30, 48, 80);
 }
 
 .icon-menu{
   font-size:22px;
 }
-
-.footer-btn{
-  position:fixed; 
-  bottom:40px; 
-  left:20px; 
-  right:20px; 
-  border-radius: 30px; 
-  border: 1px solid transparent;
-  font-size: 20px;
-}
-
-@media screen and (max-width:350px) {
-  .footer-btn{
-    font-size: 16px;
-  }
-}
 </style>
 </head>
 <body>
-<div class="container-fluid" style="margin-bottom: 120px;">
+<div class="container-fluid" style="margin-bottom: 60px;min-height:100vh">
     <nav class="navbar bg-white shadow-sm fixed-top">
         <a class="navbar-brand mx-4 " href="javascript:void()">ExamOnline Pro</a>
     </nav>
     <div class="d-md-flex my-5 pt-5 d-sm-block justify-content-center">
         
     <a href="" class="mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-        <div class="card my-2 shadow-sm" style="background: linear-gradient(90deg, rgb(7, 235, 159), rgb(6, 154, 190));">
+        <div class="card my-1 shadow-sm" style="background: linear-gradient(90deg, rgb(7, 235, 159), rgb(6, 154, 190));">
             <div class="card-body text-center">
                 <h2 class="text-white">Speaking Mock</h2>
                 <span class="badge badge-info">Premium</span>
@@ -109,7 +91,7 @@ rel="stylesheet"
         </div>
     </a>
     <a href="" class="mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">    
-        <div class="card my-2 " style="background: linear-gradient(90deg, rgb(245, 10, 167), rgb(169, 6, 190))">
+        <div class="card my-1" style="background: linear-gradient(90deg, rgb(245, 10, 167), rgb(169, 6, 190))">
             <div class="card-body text-center">
                 <h2 class="text-white">Writing Checker</h2>
                 <span class="badge badge-info">Premium</span>
@@ -117,7 +99,7 @@ rel="stylesheet"
         </div>
     </a>
     <a href="javascript:void()" class="mx-3">    
-        <div class="card mt-2" style="background: linear-gradient(90deg, rgb(10, 210, 245), rgb(6, 132, 190))">
+        <div class="card my-1" style="background: linear-gradient(90deg, rgb(10, 210, 245), rgb(6, 132, 190))">
             <div class="card-body text-center">
                 <h2 class="text-white">Reading</h2>
                 <span class="badge badge-info">Tez kunda</span>
@@ -126,9 +108,13 @@ rel="stylesheet"
     </a>
     </div>
 </div>
-<button class="footer-btn btn btn-primary  py-3" onclick="randomTest()">Start  Practice &nbsp; <i class="fa fa-arrow-right"></i></button>
 </div>
-
+<div class="footer-menu">
+  <div class=" menu"><a class="link link-active href="https://multiexam.vercel.app/"> <i class="fa fa-home icon-menu"></i><span>Home</span></a></div>
+  <div class=" menu "><a class="link" href="https://multiexam.vercel.app/skills.html"><i class="fa fa-tasks icon-menu"></i><span>Practice</span></a></div>
+  <div class=" menu"><a class="link" href="https://multilevel.vercel.app/prep/"><i class="fas fa-book-open icon-menu"></i><span>Q&A</span></a></div>
+  <div class=" menu"><a class="link" href="calculate.html"><i class="fa fa-language icon-menu"></i><span>Vocabulary</span></a></div>
+</div>
 
 
 <!-- Modal writing -->
