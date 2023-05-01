@@ -144,6 +144,7 @@ function displayMessage(message, isBot) {
   const messageElement = document.createElement("div");
   messageElement.classList.add(isBot ? "bot-message" : "user-message");
   messageElement.textContent = message;
+  messageElement.style.textAlign="left";
   chatHistory.appendChild(messageElement);
 }
 
