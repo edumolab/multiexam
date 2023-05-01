@@ -128,7 +128,7 @@ async function sendMessage(message) {
       "Authorization": `Bearer ${apiKey}`
     },
     body: JSON.stringify({
-      "prompt": `Conversation:\nUser: ${message}\n:`,
+      "prompt": `Write IELTS essay on the following text:\n ${message}\n\nEssay:`,
       max_tokens: 2000,
       temperature: 0.5,
       top_p: 1,
