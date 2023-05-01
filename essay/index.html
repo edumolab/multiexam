@@ -67,7 +67,7 @@
 
 </div>
 <grammarly-editor-plugin>
-  <textarea disabled spellcheck="true" translate="yes"  id="writing" class="form-control textarea"  placeholder="Essayni shu yerga yozishni boshlang..."></textarea>
+  <textarea  spellcheck="true" translate="yes"  id="writing" class="form-control textarea"  placeholder="Essayni shu yerga yozishni boshlang..."></textarea>
 </grammarly-editor-plugin>
 </div>
 
@@ -130,7 +130,6 @@ var x = setInterval(function() {
 document.getElementById("start-btn").addEventListener("click", function(){
   countdownTime();
   document.querySelector("#start-btn").style.display="none";
-  document.getElementById("writing").disabled=false;
 document.querySelector("#send-btn").disabled=false;
 
 });
