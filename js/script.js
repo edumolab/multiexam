@@ -10,7 +10,8 @@ var users = [
     {username: "yusufov", password: "jonibek"},
     {username: "muyidinov", password: "avazbek"},
     {username: "mirzaxamdamov", password: "jasur"},
-    {username: "nuriddin", password: "1001"}
+    {username: "nuriddin", password: "1001"},
+    {username: "mystudent", password: "student1"}
     
   ];
 
