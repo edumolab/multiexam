@@ -12,9 +12,11 @@ var users = [
     {username: "mirzaxamdamov", password: "jasur"},
     {username: "nuriddin", password: "1001"},
     {username: "mystudent", password: "student1"}
+    {username: "javlonbek", password: "abduhalilov"}
     
   ];
-
+var user = document.getElementById("username").value;
+document.getElementById("user").innerHTML="Hey"
 var form = document.getElementById("myForm");
 form.addEventListener("submit", function(event) {
     // Prevent the default form submission behavior
