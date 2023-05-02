@@ -16,7 +16,6 @@ var users = [
     
   ];
 var user = document.getElementById("username").value;
-document.getElementById("user").innerHTML="Hey"
 var form = document.getElementById("myForm");
 form.addEventListener("submit", function(event) {
     // Prevent the default form submission behavior
