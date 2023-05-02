@@ -165,6 +165,11 @@ rel="stylesheet"
     padding: 10px;
   }
 }
+    
+    video{
+  border: 1px solid transparent;
+  border-radius: 30px;
+}
 </style>
 </head>
 <body>
@@ -228,6 +233,11 @@ rel="stylesheet"
  </div>
     </div>
 </div>
+   <div class="container">
+  <div class="videoBox  ratio ratio-16x9">
+    <video src="" id="videos" class="shadow border-0" controls title="Daily Videos"></video>
+  </div>
+</div> 
     <main class="container justify-content-center align-items-center">
 <div class="course-slider">
   <div class="card1">
@@ -433,6 +443,19 @@ var users = [
   window.location.href=randomLink
     }
 
+      
+      const videos=[
+  "videos/video1.mp4",
+  "videos/video2.mp4",
+  "videos/video3.mp4",
+  "https://www.dropbox.com/s/n6d1bcueq448g3b/video4.mp4",
+  "https://www.dropbox.com/s/hdd0vyz758jj1j5/video5.mp4",
+  "https://www.dropbox.com/s/ed4trxp8ab77geh/video6.mp4"
+  ]
+var randomVideos=Math.floor(Math.random()*videos.length)
+var videoBox=document.getElementById("videos")
+videoBox.src=videos[randomVideos]
+      
       </script>
 </body>
 </html>
