@@ -12,7 +12,8 @@ var users = [
     {username: "mirzaxamdamov", password: "jasur"},
     {username: "nuriddin", password: "1001"},
     {username: "mystudent", password: "student1"},
-    {username: "javlonbek", password: "abduhalilov"}
+    {username: "javlonbek", password: "abduhalilov"},
+    {username: "dilshod", password: "xolmirzayev"}
     
   ];
 var user = document.getElementById("username").value;
