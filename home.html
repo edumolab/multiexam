@@ -262,7 +262,7 @@ rel="stylesheet"
 </main>
     <div class="footer-menu">
   <div class=" menu"><a class="link link-active href="https://multiexam.vercel.app/"> <i class="fa fa-home icon-menu"></i><span>Home</span></a></div>
-  <div class=" menu "><a class="link" onclick="randomTest()"><i class="fas fa-microscope icon-menu"></i><span>Practice</span></a></div>
+  <div class=" menu "><a class="link" id="link" href=""><i class="fas fa-microscope icon-menu"></i><span>Practice</span></a></div>
   <div class=" menu"><a class="link" href="https://multiexam.vercel.app/exam/index.html"><i class="fas fa-book-reader icon-menu"></i><span>Q&A</span></a></div>
   <div class=" menu"><a class="link" href="https://multiexam.vercel.app/prep/vocabulary.html"><i class="fa fa-language icon-menu"></i><span>Vocabulary</span></a></div>
 </div>
@@ -432,14 +432,14 @@ var users = [
 
 
 
-    function randomTest(){
+   
         const links=['freetests/test6/index.html', 'freetests/test7/index.html','freetests/test8/index.html', 'freetests/test9/index.html', 'freetests/test10/index.html', 'freetests/test11/index.html', 'freetests/test12/index.html', 'freetests/test13/index.html', 'freetests/test14/index.html', 'freetests/test15/index.html', 'freetests/test16/index.html', 'freetests/test17/index.html', 'freetests/test18/index.html', 'freetests/test19/index.html','freetests/test20/index.html', 'freetests/test21/test03/index.html', 'freetests/test22/index.html', 'freetests/test23/test04/index.html','freetests/test24/test05/index.html']
     const random=Math.floor(Math.random()*links.length)
     var randomLink=links[random]
-  window.location.href=randomLink
-    }
+  document.getElementById("link").href=randomLink;
+    
 
-     randomTest()
+   
       
       const videos=[
   "videos/video2.mp4",
