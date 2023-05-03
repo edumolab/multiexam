@@ -14,7 +14,20 @@ self.addEventListener('install',  function (e) {
       return cache.addAll(
         [
           '/index.html', // == https://legends.io
-          '/home.html'
+          '/home.html',
+          '/prep/index.html',
+          '/videos/video1.mp4',
+          '/videos/video2.mp4',
+          '/videos/video3.mp4',
+          '/exam/index.html',
+          '/exam/sample.html',
+          '/freetests/',
+          '/bot/feedback.html',
+          '/bot/idea.html',
+          '/css/bootstrap.min.css',
+           '/css/style.css',
+           '/js/script.js',
+          
 
         ]
       );
