@@ -20,6 +20,7 @@ var users = [
     {username: "mahmudjon", password: "maxsudov"},
     {username: "maftunaorolova39@gmail.com", password: "Maftuna39"},
     {username: "abdulladavlatov777@gmail.com", password: "Abdulla02"},
+    {username: "bauka_baymuxanov@mail.ru", password: "Baymuxanov01"},
     
     
   ];
