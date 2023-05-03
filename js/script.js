@@ -3,7 +3,7 @@ var users = [
     {username: "humoyun", password: "11111"},
     {username: "samoyiddin", password: "12345"},
     {username: "erkaboyeva", password: "sarvinoz"},
-    {username: "ekaterina", password: "1234"},
+    {username: "uldaulettuakbaeva4@gmail.com", password: "Uldawlet4"},
     {username: "mohinur", password: "123344"},
     {username: "admin", password: "adminjon"},
     {username: "yusufov", password: "jonibek"},
