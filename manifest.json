@@ -3,7 +3,7 @@
   "description": "Edumo Online Speaking Exam",
   "dir": "ltr",
   "display": "fullscreen",
-  "name": "Exam Online | Edumo",
+  "name": "Exam Online Pro | Edumo",
   "orientation": "portrait",
   "scope": "/sw.js",
   "short_name": "Multilevel SpeakApp",
@@ -120,7 +120,7 @@
   "shortcuts": [
     {
       "name": "Exam Online | Edumo",
-      "url": "https://speakingapp.uz/",
+      "url": "https://multiexam.vercel.app/",
       "description": "Online Speaking App"
     }
   ],
