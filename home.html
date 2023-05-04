@@ -320,8 +320,8 @@ rel="stylesheet"
 
    
 const splinks=['test01/index.html', 'test002/index.html', 'test03/index.html', 'test04/index.html' ]
-const random=Math.floor(Math.random()*links.length)
-var randomLink=splinks[random]
+const sprandom=Math.floor(Math.random()*splinks.length)
+var sprandomLink=splinks[sprandom]
 
 function splink(){
 
@@ -340,7 +340,7 @@ const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${ch
   fetch(url)
 .then(response => {
 console.log("Sent Successfully!");
-window.location.href = randomLink;
+window.location.href = sprandomLink;
 document.getElementById("sp-link").value=""
 if (!response.ok) {
 throw new Error('Failed to send message');
