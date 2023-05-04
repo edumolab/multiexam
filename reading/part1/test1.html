@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css">
+
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="style.css">
+	<title>Test 1</title>
+</head>
+<body>
+
+<main class="container main py-4" id="part1">
+       <br> <br> <br><h2 class="reading-heading ">Part 1</h2>
+    <h5>Questions 1-6. Read the text. Fill in each gap with ONE Word. You must use a word which is somewhere in the rest of the text.</h5>
+<p>Two American Festivals Burning Man Burning Man is an event that started in 1986 in Black Rock City, Nevada. People go to the desert and build a giant community for nine dayS. At the end of the festival, they burn a <b> 	1.</b><input type="text"  id="ex1" required>  wooden statue of a man . That's where the name comes from. The <b>2.</b> <input type="text" class="ex-input"  id="ex2" required> celebrates inclusion, community, and responsibility. Everyone should share their talents So others can enjoy them for free. It is now also very popular with young influencers on social media and other famous <b>3.</b> <input type="text" id="ex3" required>.</p>
+
+<h5>The Taste of Buffalo</h5>
+<p> The Taste of Buffalo in Buffalo, New York, is the largest 2-day food festival in the country every year. Nearly half a million people visit the festival to eat special dishes from over 50 restaurants. There are over 200 different <b>4.</b> <input type="text" id="ex4" required> to try! Most of the food is from regional <b>5.</b> <input type="text" id="ex5" required> , and it is a great family event. It is a good place if you want to visit here as a <b>6.</b> <input type="text" id="ex6" required>.</p>
+<br><br><br><br><br>
+
+<div id="result"></div>
+
+<div id="answers"></div>
+<button class="btn btn-primary" onclick="check()">Check</button>
+</main>
+    
+    <script>
+    	 function check() {
+				var ex, ex0, result, score;
+				result=true; score=0;
+
+				ex=['giant', 'festival', 'people', 'dishes', 'restaurants', 'family'];
+
+				for (var i=1; i<7; i++) 
+					{
+						ex0=document.getElementById("ex"+i).value;
+				if (ex0.trim().toLowerCase()!=ex[i-1])
+				{ result=false; document.getElementById("ex"+i).style.background="red"}
+				else {document.getElementById("ex"+i).style.background="#00ff00"
+				score++;}
+					}
+
+					document.getElementById("result").innerHTML=
+				"<div class='badge-primary px-4 py-2 my-3'>Your result: "+score+"/6 </div>";
+
+				document.getElementById("answers").innerHTML="<ol><li>giant</li><li>festival</li><li>people</li><li>dishes</li><li>restaurants</li><li>family</li></ol>"
+
+			}		
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.false{
+    color:rgb(189, 12, 12);
+    background: rgba(197, 10, 35, 0.555);
+}
+
+.true{
+    color: rgb(7, 165, 118);
+    background: #08d1a5b6;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.navbar{
+    background-color: white;
+    border-bottom: 1px solid rgb(224, 222, 222);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 3;
+}
+
+.main{
+    min-height: 100vh;
+    width: 100%;
+}
+
+#footBar{
+    height: 60px;
+    left: 0;
+    bottom: 0;
+    background: #284664;
+    position: fixed;
+    z-index: 700;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.left-split{
+    position: fixed;
+    text-align: justify;
+    width:50%;
+    left: 0;
+    height: 100%;
+    overflow-y:scroll;
+    padding: 70px 50px;
+    background: #d7e6dc;
+}
+
+
+
+
+.right-split{
+    position: fixed;
+    width: 50%;
+    left: 50%;
+    right:0;
+    height: 100%;
+    overflow-y:scroll;
+    padding: 70px 50px;
+}
+
+.result{
+    font-size: 30px;
+    color:darkblue;
+    font-weight: bold;
+}
+
+span{
+    display: inline-block;
+    line-height: 2rem;
+}
+
+
+.reading-heading{
+    line-height: 1.5;
+    color: #282828;
+}
+
+.reading-description{
+    font-size: 15px;
+    font-style: italic;
+}
+
+select{
+    width: 150px;
+}
+
+input[type="text"]{
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    text-indent: 20px;
+    color: #0000ff;
+    font-style: italic;
+}
+
+@media screen and (max-width:660px) {
+    .navbar{
+        display: none;
+    }
+    .left-split{
+        position: fixed;
+        text-align: justify;
+        width:100%;
+        top: 0;
+        height: 50%;
+        overflow-y:scroll;
+        padding: 70px 50px;
+        background: #d7e6dc;
+    }
+
+    .right-split{
+        position: fixed;
+        width: 100%;
+        left:0;
+        bottom:0;
+        height: 50%;
+        overflow-y:scroll;
+        padding: 70px 50px;
+    }
+    
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #7B1FA2;
+    background-color: red;
+}
