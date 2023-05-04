@@ -81,13 +81,14 @@ rel="stylesheet"
 /* Course Card Styles */
 .card1 {
   width: 300px;
-  background-color: #fff;
+  background-color: #252352;  
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   overflow-x: scroll;
   margin-right: 20px;
   display: inline-block;
   vertical-align: top;
+  color: #fff;
 }
 
 .card1 img {
@@ -191,6 +192,107 @@ rel="stylesheet"
   color: black;
 }
 
+body{
+  background-color: #151436;
+}
+
+.Card-bg{
+  background-color: #322f65;
+}
+
+.arrow-1{
+     background: linear-gradient(90deg, rgb(48, 188, 243),rgb(0, 102, 255));
+    }
+
+    .arrow-2{
+     background: linear-gradient(90deg, rgb(0, 228, 133),rgb(6, 148, 93));
+    }
+
+    .arrow-3{
+      background: linear-gradient(90deg, rgb(125, 0, 228),rgb(79, 6, 148));
+    }
+
+
+    .arrow-4{
+      background: linear-gradient(90deg, rgb(252, 164, 2),rgb(243, 208, 11));
+    }
+
+    .arrow-5{
+      background: linear-gradient(90deg, rgb(2, 252, 177),rgb(54, 238, 152));
+    }
+
+    .arrow-6{
+      background: linear-gradient(90deg, rgb(252, 2, 169),rgb(243, 11, 108));
+    }
+
+    .card-icon{
+        font-size: 30px;
+    }
+
+    .card-1{
+      background: linear-gradient(90deg, rgb(48, 188, 243),rgb(0, 102, 255));
+      color: white;
+    }
+
+    .card-2{
+      background: linear-gradient(90deg, rgb(0, 228, 133),rgb(6, 148, 93));
+      color: white;
+    }
+
+    .card-3{
+      background: linear-gradient(90deg, rgb(125, 0, 228),rgb(79, 6, 148));
+      color: white;
+    }
+
+    .card-4{
+      background: linear-gradient(90deg, rgb(252, 164, 2),rgb(243, 208, 11));
+      color: white;
+    }
+
+    .card-5{
+      background: linear-gradient(90deg, rgb(2, 252, 177),rgb(54, 238, 152));
+      color: white;
+    }
+
+    .card-6{
+      background: linear-gradient(90deg, rgb(252, 2, 169),rgb(243, 11, 108));
+      color: white;
+    }
+    
+    .card-text{
+        font-size: 30px;
+    }
+
+    @media screen and (max-width:660px) {
+      .card-text{
+        font-size: 23px;
+    }
+
+    .card-icon{
+        font-size: 23px;
+    }
+    }
+
+    @media screen and (max-width:335px) {
+      .card-text{
+        font-size: 18px;
+    }
+
+    .card-icon{
+        font-size: 18px;
+    }
+    }
+
+    @media screen and (max-width:300px) {
+      .card-text{
+        font-size: 14px;
+    }
+
+    .card-icon{
+        font-size: 14px;
+    }
+    }
+
 </style>
 </head>
 <body>
@@ -199,61 +301,95 @@ rel="stylesheet"
     <p id="tr-text">Wait ... 0%</p>
   </div>
 
-<nav class="navbar bg-white shadow-sm fixed-top">
-        <a class="navbar-brand mx-4 " href="javascript:void()">ExamOnline Pro</a>
+<nav class="navbar shadow fixed-top" style="background-color: #090469;">
+        <a class="navbar-brand mx-4 fw-bold " href="javascript:void()" style="color:rgb(185, 223, 248) ;">ExamOnline Pro</a>
     </nav>
 <div class="container" style="min-height:100vh">
     <h4 id="user"></h4>
     <div class="d-md-flex mt-5 pt-5 d-sm-block justify-content-center">
       <div class="row">  
-    <a href="" class="col" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-        <div class="card my-1 shadow-sm" style="background: linear-gradient(90deg, rgb(7, 235, 159), rgb(6, 154, 190));">
-            <div class="card-body text-center">
-                <h2 class="text-white">Speaking Mock</h2>
-                <span class="badge badge-info">Premium</span>
-            </div>
-        </div>
-    </a>
-    <a href="" class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">    
-        <div class="card my-1" style="background: linear-gradient(90deg, rgb(245, 10, 167), rgb(169, 6, 190))">
-            <div class="card-body text-center">
-                <h2 class="text-white">Writing Checker</h2>
-                <span class="badge badge-info">Premium</span>
-            </div>
+    <a href="" class="col-md-12" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+        <div class="card my-1 shadow-sm Card-bg">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                  <i class="fa fa-microphone card-icon card-1 bg-white rounded px-3  py-3"></i>
+                  <p class="card-text text-white mx-3">Speaking Mock</p>
+              </div>
+                <span class="arrow-1 rounded-circle py-2 px-3">
+                  <i class="fa fa-chevron-right text-white"></i>
+                </span>
+            </div>  
         </div>
     </a>
 
-    <a href="https://multiexam.vercel.app/reading/index.html" class="col">    
-        <div class="card my-1" style="background: linear-gradient(90deg, rgb(10, 210, 245), rgb(6, 132, 190))">
-            <div class="card-body text-center">
-                <h2 class="text-white">Reading</h2>
-            </div>
-        </div>
+    <a href="" class="col-md-12" data-bs-toggle="modal" data-bs-target="#exampleModal">    
+      <div class="card my-1 shadow-sm Card-bg">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+              <i class="fa fa-pen card-icon card-2 bg-white rounded px-3  py-3"></i>
+              <p class="card-text text-white mx-3">Writing Checker</p>
+          </div>
+            <span class="arrow-2 rounded-circle py-2 px-3">
+              <i class="fa fa-chevron-right text-white"></i>
+            </span>
+        </div>  
+    </div>
+    </a>
+
+    <a href="https://multiexam.vercel.app/reading/index.html" class="col-md-12">    
+      <div class="card my-1 shadow-sm Card-bg">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+              <i class="fa fa-book card-icon card-3 bg-white rounded px-3  py-3"></i>
+              <p class="card-text text-white mx-3">Reading</p>
+          </div>
+            <span class="arrow-3 rounded-circle py-2 px-3">
+              <i class="fa fa-chevron-right text-white"></i>
+            </span>
+        </div>  
+    </div>
     </a>
           
-    <a href="javascript:void()" class="col">    
-        <div class="card my-1" style="background: linear-gradient(to top, #30cfd0 0%, #330867 100%);">
-            <div class="card-body text-center">
-                <h2 class="text-white">Listening</h2>
-                <span class="badge badge-info">Tez kunda</span>
-            </div>
-        </div>
+    <a href="javascript:void()" class="col-md-12">    
+      <div class="card my-1 shadow-sm Card-bg">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+              <i class="fa fa-headphones card-icon card-4 bg-white rounded px-3  py-3"></i>
+              <p class="card-text text-white mx-3">Listening</p>
+          </div>
+            <span class="arrow-4 rounded-circle py-2 px-3">
+              <i class="fa fa-chevron-right text-white"></i>
+            </span>
+        </div>  
+    </div>
     </a>
 
     <a href="bot/idea.html" class="col-md-12">    
-      <div class="card my-1" style="background: linear-gradient(90deg, rgb(159, 10, 245), rgb(6, 107, 190))">
-          <div class="card-body text-center">
-              <h2 class="text-white">Idea Generator</h2>
+      <div class="card my-1 shadow-sm Card-bg">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+              <i class="fa fa-lightbulb card-icon card-5 bg-white rounded px-3  py-3"></i>
+              <p class="card-text text-white mx-3">Idea Generator</p>
           </div>
-      </div>
+            <span class="arrow-5 rounded-circle py-2 px-3">
+              <i class="fa fa-chevron-right text-white"></i>
+            </span>
+        </div>  
+    </div>
   </a>
 
   <a href="bot/feedback.html" class="col-md-12">    
-    <div class="card my-1" style="background: linear-gradient(90deg, rgb(245, 182, 10), rgb(248, 232, 3))">
-        <div class="card-body text-center">
-            <h2 class="text-white">Essay Feedback Giver</h2>
+    <div class="card my-1 shadow-sm Card-bg">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <i class="fa fa-comments card-icon card-6 bg-white rounded px-3  py-3"></i>
+            <p class="card-text text-white mx-3">Essay Feedback</p>
         </div>
-    </div>
+          <span class="arrow-6 rounded-circle py-2 px-3">
+            <i class="fa fa-chevron-right text-white"></i>
+          </span>
+      </div>  
+  </div>
 </a>
  </div>
     </div>
@@ -265,7 +401,7 @@ rel="stylesheet"
 </div> 
     <main class="container justify-content-center align-items-center">
 <div class="course-slider">
-  <div class="card1">
+  <div class="card1 text-white">
     <img src="img/writing.jpg" alt="Course Image">
     <h2>Task 2 (Essay)</h2>
     <p>All about Task 2</p>
