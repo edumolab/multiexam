@@ -50,6 +50,10 @@
 					  <label for="password">Password</label>
 					  <input class="form-control" type="password" id="password" name="password" minlength="6" required>
 					</div>
+					<div id="remember-me" class="mt-4">
+						<label>Remember me</label>
+						<input class="checkbox" type="checkbox">
+					</div>
 					<button class="btn btn-primary my-4" type="submit">Login</button>
 					<a class="text-white pt-3 text-center style="font-size: 10px;" href="https://t.me/javlon_developer" target="_blank">Biz bilan bog'lanish</a>
 				  </form>
@@ -91,6 +95,8 @@ const auth = getAuth(app);
 
 		const emailInput = document.querySelector('#email');
 		const passwordInput = document.querySelector('#password');
+		const rememberMeCheckbox = document.querySelector('#remember-me');
+
 
   const loginForm = document.querySelector('#login-form');
   loginForm.addEventListener('submit', async (event) => {
@@ -99,6 +105,16 @@ const auth = getAuth(app);
     try {
       // Sign in user with email and password
       const { user } = await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
+
+	   // If user checked "remember me", save email and password to localStorage
+	   if (rememberMeCheckbox.checked) {
+      localStorage.setItem('email', emailInput.value);
+      localStorage.setItem('password', passwordInput.value);
+    } else {
+      // Otherwise, remove email and password from localStorage
+      localStorage.removeItem('email');
+      localStorage.removeItem('password');
+    }
 
       // Redirect user to dashboard or show success message
       console.log('User logged in:', user);
@@ -109,6 +125,15 @@ const auth = getAuth(app);
       document.getElementById("alert").innerHTML="Invalid Login Credential"
     }
   });
+
+  // Check if email and password are saved in localStorage and fill the input fields
+const savedEmail = localStorage.getItem('email');
+const savedPassword = localStorage.getItem('password');
+if (savedEmail && savedPassword) {
+  emailInput.value = savedEmail;
+  passwordInput.value = savedPassword;
+  rememberMeCheckbox.checked = true;
+}
 </script>
 </body>
 </html>
