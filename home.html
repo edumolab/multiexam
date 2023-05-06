@@ -298,7 +298,7 @@ body{
 <body>
 
   <div id="transition">
-    <p id="tr-text">Wait ... 0%</p>
+    <p id="tr-text">Wait ... 1%</p>
   </div>
 
 <nav class="navbar shadow fixed-top" style="background-color: #131224;">
@@ -336,7 +336,7 @@ body{
     </div>
     </a>
 
-    <a href="https://multiexam.vercel.app/reading/index.html" class="col-md-12">    
+    <a href="https://multiexam.vercel.app/reading/index.html" class="col-md-12" onclick="waitLoader()">    
       <div class="card my-1 shadow-sm Card-bg">
         <div class="card-body d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
@@ -350,7 +350,7 @@ body{
     </div>
     </a>
           
-    <a href="javascript:void()" class="col-md-12">    
+    <a href="javascript:void()" class="col-md-12" onclick="waitLoader()">    
       <div class="card my-1 shadow-sm Card-bg">
         <div class="card-body d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
@@ -364,7 +364,7 @@ body{
     </div>
     </a>
 
-    <a href="bot/idea.html" class="col-md-12">    
+    <a href="bot/idea.html" class="col-md-12" onclick="waitLoader()">    
       <div class="card my-1 shadow-sm Card-bg">
         <div class="card-body d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
@@ -378,7 +378,7 @@ body{
     </div>
   </a>
 
-  <a href="bot/feedback.html" class="col-md-12">    
+  <a href="bot/feedback.html" class="col-md-12" onclick="waitLoader()">    
     <div class="card my-1 shadow-sm Card-bg">
       <div class="card-body d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
@@ -423,9 +423,9 @@ body{
 </main>
     <div class="footer-menu">
   <div class=" menu"><a class="link link-active href="https://multiexam.vercel.app/"> <i class="fa fa-home icon-menu"></i><span>Home</span></a></div>
-  <div class=" menu "><a class="link" id="link" href=""><i class="fas fa-microscope icon-menu"></i><span>Practice</span></a></div>
-  <div class=" menu"><a class="link" href="https://multiexam.vercel.app/exam/index.html"><i class="fas fa-book-reader icon-menu"></i><span>Q&A</span></a></div>
-  <div class=" menu"><a class="link" href="https://multiexam.vercel.app/prep/vocabulary.html"><i class="fa fa-language icon-menu"></i><span>Vocabulary</span></a></div>
+  <div onclick="waitLoader()" class=" menu "><a class="link" id="link" href=""><i class="fas fa-microscope icon-menu"></i><span>Practice</span></a></div>
+  <div onclick="waitLoader()" class=" menu"><a class="link" href="https://multiexam.vercel.app/exam/index.html"><i class="fas fa-book-reader icon-menu"></i><span>Q&A</span></a></div>
+  <div onclick="waitLoader()" class=" menu"><a class="link" href="https://multiexam.vercel.app/prep/vocabulary.html"><i class="fa fa-language icon-menu"></i><span>Vocabulary</span></a></div>
 </div>
 </div>
 
@@ -592,7 +592,9 @@ var randomVideos=Math.floor(Math.random()*videos.length)
 var videoBox=document.getElementById("videos")
 videoBox.src=videos[randomVideos]
       
+function waitLoader(){
+document.getElementById("transition").style.display="block"
+}
       </script>
-      https://multiexam.vercel.app/js/script.js
 </body>
 </html>
