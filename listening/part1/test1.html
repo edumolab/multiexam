@@ -61,7 +61,7 @@ input:checked {
   <div class="container my-5 bg-white rounded p-5">
     <p><strong>You will hear some sentences. You will hear each sentence twice. </strong><strong>Choose the correct reply to each sentence (A, B, or C)</strong></p>
   <div class="row">
-    <div class="my-4 " id="app"></div>
+    <audio src="test1.mp3" class="my-4"></audio>
     <div class="col-md-6">
 <p><strong>1.</strong><span id="s1"></span></p>
 <ol style="list-style-type: upper-alpha;">
@@ -137,9 +137,7 @@ input:checked {
 
   <script>
 
-    var h = '<audio controls src="test1.mp3"></audio>'
-
-$('#app').html(h)
+   
  maudio({
   obj: 'audio',
   fastStep:10 
