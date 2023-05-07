@@ -114,11 +114,9 @@ border-radius: 0;
 
 <script>
 const chatHistory = document.getElementById("chat-history");
-const botBubble = document.createElement("div");
-botBubble.classList.add("chat-bubble", "bot-bubble");
 const messageInput = document.getElementById("message-input");
 const sendButton = document.getElementById("send-button");
-const apiKey = "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";
+const apiKey = "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";
 
 async function sendMessage(message) {
   const response = await fetch(`https://api.openai.com/v1/engines/text-davinci-003/completions`, {
@@ -143,9 +141,14 @@ async function sendMessage(message) {
 function displayMessage(message, isBot) {
   const messageElement = document.createElement("div");
   messageElement.classList.add(isBot ? "bot-message" : "user-message");
-  messageElement.textContent = message;
+  messageElement.textContent = isBot ? "Wait..." : message;
   messageElement.style.textAlign="left";
   chatHistory.appendChild(messageElement);
+  if (isBot) {
+    sendMessage(message).then(botMessage => {
+      messageElement.textContent = botMessage;
+    });
+  }
 }
 
 sendButton.addEventListener("click", async () => {
@@ -155,7 +158,6 @@ sendButton.addEventListener("click", async () => {
   displayMessage(message, false);
   const botMessage = await sendMessage(message);
   displayMessage(botMessage, true);
-
   messageInput.value = "";
   messageInput.focus();
 });
