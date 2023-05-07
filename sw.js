@@ -27,6 +27,9 @@ self.addEventListener('install',  function (e) {
           '/css/bootstrap.min.css',
            '/css/style.css',
            '/js/script.js',
+          '/dictionary/index.html',
+          '/dictionary/younglish.html',
+          '/dictionary/script.js',
           
 
         ]
