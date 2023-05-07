@@ -4,22 +4,31 @@
     <link rel="stylesheet" href="style.css"/>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <style>
+      body {
+  background: rgba(29, 30, 34);
+}
+    </style>
     <title>Fast-Search</title>
 </head>
 <body>
- <a class="text-white" href="younglish.html" target="_blank"><p  style="padding:10px; text-align: center; cursor: pointer;">See how others are saying this word</p></a>
-    <main class="container">
-  <input id="searchForm" type="text" placeholder="Type a word" onInput="loadSearch(search='search')" onkeyup="clearSearch()" maxlength="29" required value=""></input>
-   
-  <div class="def-rectangle">
-   <audio src="" id="sound"></audio>
-  
+ <a class="text-blue" href="younglish.html" target="_blank"><p  style="padding:10px; text-align: center; cursor: pointer;">See how others are saying this word</p></a>
+  <center><input class="form-control bg-dark rounded mb-4 text-white" id="searchForm" type="text" placeholder="Type a word" onInput="loadSearch(search='search')" onkeyup="clearSearch()" maxlength="29" required value=""></input></center>
+  <main class="container"> 
+   <div class="row">
+     <div class="col-md-2 mx-2">
+       <div id="searchImage">
+    <img src="https://source.unsplash.com/featured?chien"></img>
+  </div>
+     </div>
+     <div class="col-md-10 mx-2">
+       <audio src="" id="sound"></audio>
     <div class="d-flex">
     <b><div id="name" class="mx-3">No Word</div></b>
-    <i class="fa fa-volume-up mx-3 text-white" id="play"></i>
+    <i class="fa fa-volume-up mx-3 text-blue" id="play"></i>
   </div>
 
+  <!---Def---->
   <div id="definition">
     <div id='definitions' class='definition0'>
     </div>
@@ -28,10 +37,9 @@
     <div id='definitions' class='definition2'>
     </div>
   </div>
-  <div id="searchImage">
-    <img src="https://source.unsplash.com/featured?chien"></img>
-  </div>
-</div>
+     </div>
+
+   </div>
 </main>
 <script src="script.js"></script>
 </body>
