@@ -1,0 +1,33 @@
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Fast-Search</title>
+</head>
+<body>
+ <a class="text-white" href="younglish.html" target="_blank"><p  style="padding:10px; text-align: center; cursor: pointer;">See how others are saying this word</p></a>
+  <input id="searchForm" type="text" placeholder="Type a word" onInput="loadSearch(search='search')" onkeyup="clearSearch()" maxlength="29" required value=""></input>
+   
+  <div class="def-rectangle">
+   <audio src="" id="sound"></audio>
+  
+    <div class="d-flex">
+    <b><div id="name" class="mx-3">No Word</div></b>
+    <i class="fa fa-volume-up mx-3 text-white" id="play"></i>
+  </div>
+
+  <div id="definition">
+    <div id='definitions' class='definition0'>
+    </div>
+    <div id='definitions' class='definition1'>
+    </div>
+    <div id='definitions' class='definition2'>
+    </div>
+  </div>
+  <div id="searchImage">
+    <img src="https://source.unsplash.com/featured?chien"></img>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
