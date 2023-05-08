@@ -72,6 +72,7 @@
 	
 
 	 
+	 
 <script type="module">
 	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
@@ -96,7 +97,8 @@ const auth = getAuth(app);
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-
+// Enable session persistence
+	auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
 
 
 		const emailInput = document.querySelector('#email');
@@ -140,6 +142,8 @@ if (savedEmail && savedPassword) {
   passwordInput.value = savedPassword;
   rememberMeCheckbox.checked = true;
 }
+
+
 </script>
 </body>
 </html>
