@@ -116,14 +116,13 @@ border-radius: 0;
 const chatHistory = document.getElementById("chat-history");
 const messageInput = document.getElementById("message-input");
 const sendButton = document.getElementById("send-button");
-const apiKey = "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";
 
 async function sendMessage(message) {
   const response = await fetch(`https://api.openai.com/v1/engines/text-davinci-003/completions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${apiKey}`
+      "Authorization": `Bearer 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`
     },
     body: JSON.stringify({
       "prompt": `Write IELTS essay on the following text:\n ${message}\n\nEssay:`,
