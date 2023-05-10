@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="../style.css">
+<style>
+  
+
+input:checked {
+  border: 6px solid blue;
+  outline: unset !important /* I added this one for Edge (chromium) support */
+}
+
+
+    body{
+      background: #0000ff;
+    }
+
+    details{
+      display: none;
+    }
+</style>
+    <title>Listening</title>
+</head>
+<body>
+  <div class="container my-5 bg-white rounded p-5">
+    <audio src="1.mp3" controls class="my-4"></audio>
+    <p>Label the Map below.</p>
+    <P>Choose <span class="fw-bold">FIVE answers</span> from the box  and write the correct letters <span class="fw-bold">A-I</span> next questions 11-15.</P>
+    <img src="1.webp" class="img-fluid  rounded mx-auto d-block">
+
+<ol class="my-4" start="11">
+  <li><input type="text" id="ex1"><span id="s1"></span></li>
+  <li><input type="text" id="ex2"><span id="s2"></span></li>
+  <li><input type="text" id="ex3"><span id="s3"></span></li>
+  <li><input type="text" id="ex4"><span id="s4"></span></li>
+  <li><input type="text" id="ex5"><span id="s5"></span></li>
+</ol>
+<div id="result"></div>
+<details class="my-3">
+  <summary>Answers</summary>
+  <option>11. H</option>
+  <option>12. G</option>
+  <option>13. D</option>
+  <option>14. B</option>
+  <option>15. F</option>
+</details>
+<center><button class="btn btn-primary px-4 py-2 my-5" id="btn" onclick="check()">Check</button></center>
+  </div>
+
+
+
+
+
+  <script>
+
+    
+
+
+   function check()
+      {
+        
+        var ex1, ex2, ex3, ex4, ex5, score;
+        score=0;
+        ex1=document.getElementById("ex1").value;
+        if (ex1.trim().toLowerCase()!="h")
+        { ; document.getElementById("s1").innerHTML=`<i class="fa fa-times text-danger"></i>`;}
+        else { document.getElementById("s1").innerHTML=`<i class="fa fa-circle-check text-success"></i>`; score++;}
+        
+        ex2=document.getElementById("ex2").value;
+        if (ex2.trim().toLowerCase()!="g")
+        { ; document.getElementById("s2").innerHTML=`<i class="fa fa-times text-danger"></i>`;}
+        else {document.getElementById("s2").innerHTML=`<i class="fa fa-circle-check text-success"></i>`; score++;}
+        
+        
+        ex3=document.getElementById("ex3").value;
+        if (ex3.trim().toLowerCase()!="d")
+        { ; document.getElementById("s3").innerHTML=`<i class="fa fa-times text-danger"></i>`;}
+        else {document.getElementById("s3").innerHTML=`<i class="fa fa-circle-check text-success"></i>`; score++;}
+        
+        
+        ex4=document.getElementById("ex4").value;
+        if (ex4.trim().toLowerCase()!="b")
+        { ; document.getElementById("s4").innerHTML=`<i class="fa fa-times text-danger"></i>`;}
+        else {document.getElementById("s4").innerHTML=`<i class="fa fa-circle-check text-success"></i>`; score++;}
+        
+        
+        ex5=document.getElementById("ex5").value;
+        if (ex5.trim().toLowerCase()!="f")
+        { ; document.getElementById("s5").innerHTML=`<i class="fa fa-times text-danger"></i>`;}
+        else {document.getElementById("s5").innerHTML=`<i class="fa fa-circle-check text-success"></i>`; score++;}
+        
+
+          document.getElementById("result").innerHTML=
+        `<div class="fw-bold badge-primary py-3 px-5">Your result: ${score}/5</div>`;
+        document.getElementById("btn").disabled=true
+        document.querySelector("details").style.display="block"
+        }
+  </script>
+</body>
+</html>
