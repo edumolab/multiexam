@@ -611,6 +611,7 @@ function examEnd(){
 	preview .style.display="block";
 	audio15.addEventListener("ended",function(){
 		stopRecording();
+		document.getElementById("alert-time").style.display="block"
 		document.getElementById("home").style.display="block"
 
 });		

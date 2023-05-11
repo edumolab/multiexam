@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="../css/style.css">
         
      <style>
+       #alert-time{
+    display: none;
+  }
 #waveform{
   width:300px;
 }
@@ -75,7 +78,8 @@
   </div>
  
  <section class="container my-3 pt-2 shadow-sm border-1" style="border: 1px solid lightgrey; border-radius: 5px;">
- <div class="row">
+  <div id="alert-time" class="alert alert-danger">Wait 30 seconds to upload your answer</div>
+  <div class="row">
    <div class="col-md-5 py-3">
      <div class="card">
        <div class="card-body">
