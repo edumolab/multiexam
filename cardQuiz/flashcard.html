@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    
+#flashcard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#flashcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 72px;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+#word-container {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+#score-container {
+  font-size: 24px;
+  color: gray;
+}
+
+#score-container::before {
+  content: "Score: ";
+}
+
+#progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+#progress {
+  height: 100%;
+  background-color: blueviolet;
+  transition: width 0.5s ease;
+}
+
+#play{
+  color: #00ff00;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 23px;
+  margin: 8px 0;
+}
+</style>
+
+
+</head>
+<body>
+<div id="flashcard-container">
+  <div id="flashcard">
+    <div id="word-container">
+      <span id="word"></span>
+    </div>
+    <div id="score-container">
+      <span id="score">0</span>
+    </div>
+    <div id="play">Play</div>
+    <div id="progress-container">
+      <div id="progress"></div>
+    </div>
+  </div>
+</div>
+<audio id="audio"></audio>
+
+<audio id="audio" src=""></audio>
+<script>
+ // Define the flashcards
+const flashcards = [
+  { word: "apple", audio: "apple.mp3" },
+  { word: "banana", audio: "banana.mp3" },
+  { word: "cherry", audio: "cherry.mp3" },
+  { word: "orange", audio: "orange.mp3" },
+  { word: "apricot", audio: "apricot.mp3" }
+];
+
+// Initialize variables
+let currentFlashcard = 0;
+let score = 0;
+let progress = 0;
+
+// Get the elements
+const wordContainer = document.getElementById("word");
+const scoreContainer = document.getElementById("score");
+const audioElement = document.getElementById("audio");
+const progressContainer = document.getElementById("progress");
+progressContainer.style.width = `${progress}%`;
+
+
+// Function to start speech recognition
+function startSpeechRecognition() {
+  const recognition = new window.webkitSpeechRecognition();
+  recognition.continuous = false;
+  recognition.lang = "en-US";
+  recognition.onresult = function(event) {
+    const spokenWord = event.results[0][0].transcript.toLowerCase();
+    if (spokenWord === flashcards[currentFlashcard].word) {
+      score++;
+      scoreContainer.innerText = score;
+       progress += 20;
+      progressContainer.style.width = `${progress}%`;
+    } else {
+      console.log("Oh no");
+    }
+    nextFlashcard();
+  };
+  recognition.start();
+}
+
+// Function to move to the next flashcard
+function nextFlashcard() {
+  currentFlashcard++;
+  if (currentFlashcard === flashcards.length) {
+    currentFlashcard = 0;
+    score = 0;
+    scoreContainer.innerText = score;
+    progress = 0;
+    progressContainer.style.width = `${progress}%`;
+  }
+  wordContainer.innerText = flashcards[currentFlashcard].word;
+
+  audioElement.src = flashcards[currentFlashcard].audio;
+  audioElement.play();
+  document.getElementById("play").addEventListener("click", ()=>{
+   audioElement.play()
+  })
+  audioElement.onended = startSpeechRecognition;
+}
+
+// Set the initial word and audio
+wordContainer.innerText = flashcards[currentFlashcard].word;
+audioElement.src = flashcards[currentFlashcard].audio;
+wordContainer.addEventListener("click", function(){
+  audioElement.play()
+})
+audioElement.onended = startSpeechRecognition;
+
+
+</script>
+</body>
+</html>
