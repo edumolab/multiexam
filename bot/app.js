@@ -48,29 +48,29 @@ function displayWord(word) {
   
     if (wordData.descriptions && wordData.descriptions.length > 0) {
       html += '<h6>Definitions</h6>';
-      html += '<ul>';
+      html += '<ol>';
       wordData.descriptions.forEach(description => {
         html += `<li>${description}</li>`;
       });
-      html += '</ul>';
+      html += '</ol>';
     }
   
     if (wordData.examples && wordData.examples.length > 0) {
       html += '<h6>Examples</h6>';
-      html += '<ul>';
+      html += '<ol>';
       wordData.examples.forEach(examples => {
         html += `<li>${examples}</li>`;
       });
-      html += '</ul>';
+      html += '</ol>';
     }
   
     if (wordData.synonyms && wordData.synonyms.length > 0) {
       html += '<h6>Synonyms</h6>';
-      html += '<ul class="mb-4 synonyms">';
+      html += '<ol class="mb-4 synonyms">';
       wordData.synonyms.forEach(synonyms => {
         html += `<li>${synonyms}</li>`;
       });
-      html += '</ul>';
+      html += '</ol>';
 }
 /*
 if (wordData.translations) {
