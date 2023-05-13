@@ -22,7 +22,9 @@
 
   <title>Word</title>
   <style>
-    
+    *{
+      user-select: none;
+    }
 .container {
   display: flex;
   flex-direction: column;
@@ -311,7 +313,7 @@ function startSpeechRecognition() {
 // Function to move to the next flashcard
 function nextFlashcard() {
   currentFlashcard++;
-  progress += 5;
+  progress += 3;
   progressContainer.style.width = `${progress}%`;
   if (currentFlashcard === flashcards.length) {
     scorePage.classList.remove("d-none");
