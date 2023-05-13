@@ -297,12 +297,12 @@ function startSpeechRecognition() {
     const spokenWord = event.results[0][0].transcript.toLowerCase();
     if (spokenWord === flashcards[currentFlashcard].word) {
       score++;
-      feed.innerText="🎉 Good!";
+      feed.innerText="🎉 True! Go ahead!";
       feed.style.color="green"
       scoreContainer.innerText = score;
     } else {
       console.log("Oh no");
-      feed.innerText="😋 Oh,no!";
+      feed.innerText="😔 Wrong!";
       feed.style.color="red"
     }
     nextFlashcard();
