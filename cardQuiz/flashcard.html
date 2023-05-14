@@ -22,9 +22,7 @@
 
   <title>Word</title>
   <style>
-    *{
-      user-select: none;
-    }
+    
 .container {
   display: flex;
   flex-direction: column;
@@ -80,10 +78,21 @@
 }
 
 
+.next-btn-arr{
+  background-color: dodgerblue;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  border: 1px solid dodgerblue;
+  border-radius: 10px;
+  position: absolute;
+  right: 10px;
+}
+
 
 .score{
-  border-radius: 50%;
-  width: 60px;
+  border-radius: 8px;
+  width: 70px;
   height: 60px;
   background-color: darkviolet;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
@@ -139,7 +148,7 @@
   .display{
   font-size: 30px;
 }
-}
+
 
 
 
@@ -177,6 +186,11 @@
     transform: rotate(-90deg);
   }
 }
+
+
+
+
+
 </style>
 
 
@@ -192,6 +206,7 @@
   </div>
   <section id="gameCard">
   <div class="flashcard card">
+    <p id="turn" style="color:darkred;" class="fw-bold"></p>
     <div  class="word-container card-body">
       <span id="word"></span>
     </div>
@@ -200,6 +215,10 @@
     <div class="my-3" id="feed"></div>
     <div id="progress-container">
       <div id="progress"></div>
+    </div>
+    <div class="d-flex align-items-center justify-content-right">
+      <button onclick="nextFlashcard()" class="next-btn-arr"><i class="fa fa-angle-double-right 
+"></i></button>
     </div>
   </div>
 </section>
@@ -268,12 +287,14 @@ const flashcards = [
   { word: "turn up", trans: "ovozni ko'tarmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/T/DISVSANPNUD.mp3"}
 ];
 
+
 // Initialize variables
 let currentFlashcard = 0;
 let score = 0;
 let progress = 0;
 
 // Get the elements
+const turn = document.getElementById("turn")
 const welcome = document.getElementById("welcome")
 const feed = document.getElementById("feed")
 const gameCard=document.getElementById("gameCard")
@@ -297,13 +318,17 @@ function startSpeechRecognition() {
     const spokenWord = event.results[0][0].transcript.toLowerCase();
     if (spokenWord === flashcards[currentFlashcard].word) {
       score++;
-      feed.innerText="🎉 True! Go ahead!";
+      feed.innerText="🎉 Good!";
       feed.style.color="green"
-      scoreContainer.innerText = score;
+      scoreContainer.innerText = `${score}/37`;
     } else {
       console.log("Oh no");
-      feed.innerText="😔 Wrong!";
-      feed.style.color="red"
+      feed.innerText="😋 Oh,no!";
+      feed.style.color="red";
+      turn.innerText="You said: "+spokenWord
+      setTimeout(function(){
+       turn.innerText=""
+      }, 2000) 
     }
     nextFlashcard();
   };
