@@ -104,8 +104,7 @@ const auth = getAuth(app);
 		const passwordInput = document.querySelector('#password');
 		const rememberMeCheckbox = document.querySelector('#remember-me');
 
-	emailInput.autocomplete = "on";
-	passwordInput.autocomplete="on";
+
   const loginForm = document.querySelector('#login-form');
   loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -113,12 +112,11 @@ const auth = getAuth(app);
     try {
       // Sign in user with email and password
       const { user } = await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
-	  
-
-	   // If user checked "remember me", save email and password to localStorage
-	   
-      
-      
+	  emailInput.autocomplete = "on";
+	  passwordInput.autocomplete="on";
+      localStorage.setItem('email', emailInput.value);
+      localStorage.setItem('password', passwordInput.value);
+    
 
       // Redirect user to dashboard or show success message
       console.log('User logged in:', user);
@@ -131,12 +129,12 @@ const auth = getAuth(app);
   });
 
   // Check if email and password are saved in localStorage and fill the input fields
-localStorage.setItem('email', emailInput.value);
-localStorage.setItem('password', passwordInput.value);
 const savedEmail = localStorage.getItem('email');
 const savedPassword = localStorage.getItem('password');
-emailInput.value = savedEmail;
-passwordInput.value = savedPassword;
+if (savedEmail && savedPassword) {
+  emailInput.value = savedEmail;
+  passwordInput.value = savedPassword;
+}
 
 
 </script>
