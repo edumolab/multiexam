@@ -50,11 +50,11 @@
 					<p id="alert" class="py-1 rounded text-center" style="background-color:rgba(197, 8, 71, 0.993);color:white"></p>
 					<div>
 					  <label for="email">Email</label>
-					  <input class="form-control" type="email" id="email" name="email" required>
+					  <input class="form-control" type="email" id="email" name="email" required autocomplete="email">
 					</div>
 					<div>
 					  <label for="password">Password</label>
-					  <input class="form-control" type="password" id="password" name="password" minlength="6" required>
+					  <input class="form-control" type="password" id="password" name="password" minlength="6" required autocomplete="password">
 					</div>
 					<div id="remember-me" class="mt-4">
 						<label>Remember me</label>
@@ -112,6 +112,8 @@ const auth = getAuth(app);
     try {
       // Sign in user with email and password
       const { user } = await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
+	  emailInput.autocomplete = "on";
+	  passwordInput.autocomplete="on";
 
 	   // If user checked "remember me", save email and password to localStorage
 	   if (rememberMeCheckbox.checked) {
