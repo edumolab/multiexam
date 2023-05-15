@@ -61,7 +61,7 @@
 						<input class="checkbox" type="checkbox">
 					</div>
 					<button class="btn btn-primary my-4" type="submit">Login</button>
-					<a class="text-white pt-3 text-center style="font-size: 10px;" href="https://t.me/javlon_developer" target="_blank">Biz bilan bog'lanish</a>
+					<a class="text-white pt-3 text-center" style="font-size: 10px;" href="https://t.me/javlon_developer" target="_blank">Biz bilan bog'lanish</a>
 				  </form>
 			</div><!---Login-ends-->
 		</div>
@@ -104,7 +104,8 @@ const auth = getAuth(app);
 		const passwordInput = document.querySelector('#password');
 		const rememberMeCheckbox = document.querySelector('#remember-me');
 
-
+	emailInput.autocomplete = "on";
+	passwordInput.autocomplete="on";
   const loginForm = document.querySelector('#login-form');
   loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -112,18 +113,12 @@ const auth = getAuth(app);
     try {
       // Sign in user with email and password
       const { user } = await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
-	  emailInput.autocomplete = "on";
-	  passwordInput.autocomplete="on";
+	  
 
 	   // If user checked "remember me", save email and password to localStorage
-	   if (rememberMeCheckbox.checked) {
-      localStorage.setItem('email', emailInput.value);
-      localStorage.setItem('password', passwordInput.value);
-    } else {
-      // Otherwise, remove email and password from localStorage
-      localStorage.removeItem('email');
-      localStorage.removeItem('password');
-    }
+	   
+      
+      
 
       // Redirect user to dashboard or show success message
       console.log('User logged in:', user);
@@ -136,13 +131,12 @@ const auth = getAuth(app);
   });
 
   // Check if email and password are saved in localStorage and fill the input fields
+localStorage.setItem('email', emailInput.value);
+localStorage.setItem('password', passwordInput.value);
 const savedEmail = localStorage.getItem('email');
 const savedPassword = localStorage.getItem('password');
-if (savedEmail && savedPassword) {
-  emailInput.value = savedEmail;
-  passwordInput.value = savedPassword;
-  rememberMeCheckbox.checked = true;
-}
+emailInput.value = savedEmail;
+passwordInput.value = savedPassword;
 
 
 </script>
