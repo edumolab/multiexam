@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css"
+  rel="stylesheet"
+/>  
+<style>
+	.text-green{
+		color: #00ff00;
+		font-size: 28px;
+	}
+</style>
+	<title>Unit 1</title>
+</head>
+<body>
+<div class="container">
+	<div class="row my-5" id="row">
+		
+	</div>
+</div>
+
+<script>
+
+ // Define the flashcards
+const flashcards = [
+  {id:1, word: "beat", trans: "yutmoq, mag'lub qilmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/B/1ACSXW5O0LHMW.mp3" },
+  {id:2, word: "board game", trans: "doskali o'yin", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/B/14NNGV6O77O9S.mp3" },
+  {id:3, word: "captain", trans: "kapitan, rahbar", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/V225C1U9FWDC.mp3" },
+  {id:4, word: "challenge", trans: "1. da'vat etmoq; 2. sinov, muammo", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/VB0P1BNZUKVG.mp3" },
+  {id:5, word: "champion", trans: "chempion", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/155H3687XIHW5.mp3" },
+  {id:6, word: "cheat", trans: "g'irromlik qilmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/X9SD28D8V9V4.mp3"},
+  {id:7, word: "classical music", trans: "mumtoz musiqa", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/1UKEZT55R98W.mp3"},
+  {id:8, word: "club", trans: "klub", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/RASIW3TVPCH1.mp3"},
+  { id:9,word: "coach", trans: "murabbiy", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/7FZIAJRQLL4Y.mp3"},
+  { id:10, word: "competition", trans: "musobaqa", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/1R8G92UQDJ8IW.mp3"},
+  {id:11, word: "concert", trans: "konsert", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/KIHYOJ4SJDKD.mp3"},
+  {id:12, word: "defeat", trans: "g'alaba qozonmoq, mag'lub qilmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/D/1DFF78E09R26H.mp3"},
+  {id:13, word: "entertaining", trans: "qiziqarli, maroqli", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/E/1A475EMBCSDOG.mp3"},
+  {id:14, word: "folk music", trans: "milliy musiqa", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/F/U18538MBU21I.mp3"},
+  {id:15, word: "group", trans: "guruh", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/G/1S63O9R96D1MT.mp3"},
+  {id:16, word: "gym", trans: "workout zali, gimnastika zali", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/G/EZVLZ71UYC5Z.mp3"},
+  {id:17, word: "interest", trans: "qiziqtirmoq, qiziqish, hobbi", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/I/AY1NG5KTXQJX.mp3"},
+  {id:18, word: "member", trans: "a'zo", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/M/1KJL6X56IKRT8.mp3"},
+  {id:19, word: "opponent", trans: "raqib", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/O/11011ANO72RIO.mp3"},
+  {id:20, word: "organise", trans: "tashkillashtirmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/O/KGN22P835TF9.mp3"},
+  { id:21, word: "pleasure", trans: "mamnuniyat, lazzat, xursandchilik", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/P/14CUIZBMZKB92.mp3"},
+  {id:22, word: "referee", trans: "hakam", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/R/HK988CHIMAI7.mp3"},
+  {id:23, word: "rhythm", trans: "ritm, muvozanat", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/R/1N5GNNW0P5LW2.mp3"},
+  {id:24, word: "risk", trans: "tavakkal, xavf", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/R/VHZ4TKC425DB.mp3"},
+  {id:25, word: "score", trans: "ball, natija, hisob", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/S/1QIQLMD8GY9FM.mp3"},
+  {id:26, word: "support", trans: "qo'llab-quvvatlamoq, yoqlamoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/S/B31YLZWC48XA.mp3"},
+  {id:27, word: "team", trans: "jamoa", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/T/1B8HW4VSFKDHY.mp3"},
+  {id:28, word: "train", trans: "mashq qilmoq, shug'ullanmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/T/92UF9L4VKTCH.mp3"},
+  {id:29, word: "video game", trans: "video o'yinlar", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/V/1B1MGZ6YZW2OD.mp3"},
+  {id:30, word: "carry on", trans: "davom ettirmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/C/15YZZ1476OB40.mp3"},
+  {id:31, word: "eat out", trans: "restoranda ovqatlanmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/E/LJS4H5HOLFVD.mp3"},
+  {id:32, word: "give up", trans: "odatni tashlamoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/G/1NT6RTOYNR0LF.mp3"},
+  {id:33, word: "join", trans: "ishtirok etmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/J/PTPTO0IBUQ6K.mp3"},
+  {id:34, word: "send off", trans: "o'yindan chetlashtirmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/S/BS116ELP2AIL.mp3"},
+  {id:35, word: "take up", trans: "odatni boshlamoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/T/1HPL979AGBZDP.mp3"},
+  {id:36, word: "turn down", trans: "ovozni pasaytirmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/T/LXD8YWITKZDY.mp3"},
+  {id:37, word: "turn up", trans: "ovozni ko'tarmoq", audio: "http://s3.amazonaws.com/audio.vocabulary.com/1.0/us/T/DISVSANPNUD.mp3"}
+];
+
+function show(){
+	flashcards.forEach((el,index)=>{
+		const row = document.getElementById("row")
+		row.innerHTML+=`<div class="col-md-12 my-2">
+			<div class="card">
+				<div class="card-body d-flex justify-content-between align-items-center">
+					<div class="d-flex flex-column">
+					<h3>${el.word}</h3>
+					<p class="text-dark">${el.trans}</p>
+				</div>
+				<i class="fa fa-volume-up text-green" id="${el.id}"></i>
+				</div>
+			</div>
+		</div>`
+		var music=document.createElement("audio")
+		row.appendChild(music)
+		music.src=el.audio;
+		music.setAttribute("id",index);
+		
+	});
+}
+
+show()
+
+var icons = document.querySelectorAll("i");
+var audio = document.querySelectorAll("audio");
+
+for (var i = 0; i < audio.length; i++) {
+  console.log(audio[i]);
+  (function(index) {
+    icons[index].addEventListener("click", function() {
+      var musics = audio[index];
+      musics.play();
+    });
+  })(i);
+}
+
+</script>
+</body>
+</html>
