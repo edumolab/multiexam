@@ -7,7 +7,7 @@
   "orientation": "portrait",
   "scope": "https://multiexam.vercel.app/",
   "short_name": "Multilevel SpeakApp",
-  "start_url": "/index.html",
+  "start_url": "https://multiexam.vercel.app/",
   "theme_color": "#ffffff",
   "categories": [],
   "screenshots": [],
