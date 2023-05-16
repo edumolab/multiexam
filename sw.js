@@ -30,6 +30,8 @@ self.addEventListener('install',  function (e) {
           '/dictionary/index.html',
           '/dictionary/younglish.html',
           '/dictionary/script.js',
+          '/static/bootstrap.min.css',
+          '/static/mdb.min.css'
           
 
         ]
