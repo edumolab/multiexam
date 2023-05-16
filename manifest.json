@@ -5,7 +5,7 @@
   "display": "fullscreen",
   "name": "Exam Online Pro | Edumo",
   "orientation": "portrait",
-  "scope": "/sw.js",
+  "scope": "https://multiexam.vercel.app/",
   "short_name": "Multilevel SpeakApp",
   "start_url": "/index.html",
   "theme_color": "#ffffff",
