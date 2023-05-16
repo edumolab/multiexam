@@ -31,7 +31,8 @@ self.addEventListener('install',  function (e) {
           '/dictionary/younglish.html',
           '/dictionary/script.js',
           '/static/bootstrap.min.css',
-          '/static/mdb.min.css'
+          '/static/mdb.min.css',
+          '/static/fontawesome/css/all.min.css'
           
 
         ]
