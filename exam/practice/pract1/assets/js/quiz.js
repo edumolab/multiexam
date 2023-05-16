@@ -92,7 +92,8 @@ function stopRecording() {
   function downloadRecording(){
     var name = new Date();
     var res = name.toISOString().slice(0,10)
-    downloadAudio.download = res + '.mp3';
+	window.open(downloadAudio, '_blank');
+    //downloadAudio.download = res + '.mp3';
 }
 
 
