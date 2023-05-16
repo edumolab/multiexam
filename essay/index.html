@@ -195,8 +195,7 @@ function downloadAsDoc() {
   link.href = url;
   link.download = 'document.doc';
   document.body.appendChild(link);
-  link.click();
-  
+  window.open(link, '_blank');
   setTimeout(() => {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);  
