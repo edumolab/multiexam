@@ -162,11 +162,38 @@ rel="stylesheet"
     padding: 10px;
   }
 }
-    
-    video{
+
+video{
   border: 1px solid transparent;
   border-radius: 30px;
 }
+
+.video-slider {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+@media only screen and (max-width: 768px) {
+  /* Course Card Styles */
+   .video-slider {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+  } 
+  video{
+  border: 1px solid transparent;
+  border-radius: 30px;
+  width:400px;
+  height:auto;
+  background-color: #252352;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-x: scroll;
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+}
+}
+    
 
 #transition{
   display: none;
@@ -452,8 +479,12 @@ body{
     </div>
 </div>
    <div class="container">
-  <div class="videoBox  ratio ratio-16x9">
-    <video src="" id="videos" class="shadow border-0" controls title="Daily Videos"></video>
+  <div class="video-slider">
+    <video src="videos/video1.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+    <video src="videos/video2.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+    <video src="videos/video1.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+    <video src="videos/video1.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+    <video src="videos/video1.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
   </div>
 </div> 
     
@@ -638,7 +669,7 @@ var users = [
     
 
    
-      
+  /*    
       const videos=[
   "https://multiexam.vercel.app/videos/video2.mp4",
   "https://multiexam.vercel.app/videos/video1.mp4",
@@ -647,7 +678,7 @@ var users = [
 var randomVideos=Math.floor(Math.random()*videos.length)
 var videoBox=document.getElementById("videos")
 videoBox.src=videos[randomVideos]
-      
+  */   
 function waitLoader(){
 document.getElementById("transition").style.display="block"
 }
