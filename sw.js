@@ -32,7 +32,8 @@ self.addEventListener('install',  function (e) {
           '/dictionary/script.js',
           '/static/bootstrap.min.css',
           '/static/mdb.min.css',
-          '/static/fontawesome/css/all.min.css'
+          '/static/fontawesome/css/all.min.css',
+          '/http://s3.amazonaws.com/audio.vocabulary.com/'
           
 
         ]
