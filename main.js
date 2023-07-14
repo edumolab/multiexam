@@ -137,6 +137,15 @@ $("#result").click(()=>{
   $("#result_page").removeClass("hidden")
 })
 
+$("#answer").on("focus", ()=>{
+  $(".btn-right").css("position", "relative")
+   $(".btn-left").css("position", "relative")
+})
+
+$("#answer").on("blur", ()=>{
+  $(".btn-right").css("position", "fixed")
+   $(".btn-left").css("position", "fixed")
+})
 
 }
 
