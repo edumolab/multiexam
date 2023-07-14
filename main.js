@@ -9,10 +9,10 @@ const id = new URLSearchParams(window.location.search).get("id");
     const res= await fetch('https://server-five-dusky.vercel.app/games/'+ id);
     var flashcards= await res.json();
 
-    var progress_val=190/flashcards.words.length
+    var progress_val=100/flashcards.words.length
 let progress=progress_val;
 $("#idNum").html(`${currentFlashcard+1}/${flashcards.words.length}`)
-$(".progress_bar").width(progress+"px")
+$(".progress_bar").width(progress+"%")
 
  $("#check").click(function(){
   $("#check").attr("disabled","true")
@@ -71,7 +71,7 @@ $("#answer").val('')
     $(".img_container").removeClass("bg-green-300")
     $(".img_container").removeClass("bg-red-300")
     $(".img_container").addClass("bg-blue-300")
-    $(".progress_bar").width(progress+"px")
+    $(".progress_bar").width(progress+"%")
     $("#prev").show()
     if(currentFlashcard===flashcards.words.length-1){
       $("#next").hide()
@@ -86,10 +86,10 @@ $("#answer").val('')
     currentFlashcard--
     $("#answer").val('')
     progress-=progress_val
-    $(".progress_bar").width(progress+"px")
+    $(".progress_bar").width(progress+"%")
     $("#tr").html(flashcards.words[currentFlashcard].translation) 
     $("#next").show()
-    $("#quiz").hide()
+    $("#result").hide()
     if(currentFlashcard===0){
       $("#prev").hide()
       
@@ -115,7 +115,7 @@ $("#answer").val('')
     $(".img_container").removeClass("bg-green-300")
     $(".img_container").removeClass("bg-red-300")
     $(".img_container").addClass("bg-blue-300")
-    $(".progress_bar").width(progress+"px")
+    $(".progress_bar").width(progress+"%")
     $("#prev").show()
     if(currentFlashcard===flashcards.words.length-1){
       $("#next").hide()
