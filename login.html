@@ -122,9 +122,10 @@ const auth = getAuth(app);
 
       // Redirect user to dashboard or show success message
       console.log('User logged in:', user);
-	  window.location.href="https://multiexam.vercel.app/home.html"
+	  window.location.href="index.html"
     } catch (error) {
       console.error(error);
+      window.location.href="login.html"
 	  document.getElementById("alert").style.display="block"
       document.getElementById("alert").innerHTML="Invalid Login Credential"
     }
