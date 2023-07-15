@@ -10,6 +10,49 @@
     <link href="static/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="static/fontawesome/css/all.min.css" />
 <!-- Google Fonts -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script>
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCPcm6WOfOOwzKBRBqNxgB71ea2TduQ-Qg",
+    authDomain: "exam-online-384406.firebaseapp.com",
+    projectId: "exam-online-384406",
+    storageBucket: "exam-online-384406.appspot.com",
+    messagingSenderId: "685614981927",
+    appId: "1:685614981927:web:3cba11674fdc0391723f02",
+    measurementId: "G-B2P1J1FSK7"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log("User is logged in:", user);
+          document.querySelector("body").style.display="block"
+          // Add your code here to handle the logged-in user (e.g., display user-specific content)
+        } else {
+          console.log("No user is logged in. Redirecting to login page...");
+          window.location.href = "login.html"; // Redirect to the login page if not logged in
+        }
+      });
+
+     function  logOut() {
+      firebase.auth().signOut()
+        .then(function() {
+          console.log("User is logged out.");
+          window.location.href = "login.html"; // Redirect to the login page after logout
+        })
+        .catch(function(error) {
+          console.log("Logout error:", error);
+          // Add your code here to handle logout errors (if any)
+        });
+    };
+  </script>
+
 <link
 href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 rel="stylesheet"
@@ -18,6 +61,9 @@ rel="stylesheet"
 <link href="static/mdb.min.css" rel="stylesheet"/>
 
 <style>
+  body{
+    display: none;
+  }
     .card{
         cursor: pointer;
 
@@ -344,6 +390,7 @@ body{
 
 <nav class="navbar shadow fixed-top" style="background-color: #131224;">
         <a class="navbar-brand mx-4 fw-bold " href="javascript:void()" style="color:rgb(252, 219, 34) ;">ExamOnline Pro</a>
+        <button onclick="logOut()" class="btn btn-primary mx-3">Logout</button>
     </nav>
 <div class="container" style="min-height:100vh">
     <h4 id="user"></h4>
@@ -404,6 +451,19 @@ body{
         </div>  
     </div>
     </a>
+    <a href="https://multiexam.vercel.app/ielts.html" class="col-md-12" onclick="waitLoader()">    
+      <div class="card my-1 shadow-sm Card-bg">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+              <i class="fa fa-lightbulb card-icon card-5 bg-white rounded px-3  py-3"></i>
+              <p class="card-text text-white mx-3">IELTS Speaking</p>
+          </div>
+            <span class="arrow-5 rounded-circle py-2 px-3">
+              <i class="fa fa-chevron-right text-white"></i>
+            </span>
+        </div>  
+    </div>
+  </a>
   <a href="https://multiexam.vercel.app/bot/phrases.html" class="col-md-12" onclick="waitLoader()">    
     <div class="card my-1 shadow-sm Card-bg">
       <div class="card-body d-flex justify-content-between align-items-center">
@@ -463,6 +523,23 @@ body{
           
  </div>
     </div>
+</div>
+   <div class="container">
+  <div class="video-slider">
+    <video class="shadow border-0" controls title="Daily Videos">
+      <source src="videos/video1.mp4"  />
+      <track
+        label="English"
+        kind="subtitles"
+        srclang="en"
+        src="videos/uzbek.vtt"
+        default />
+    </video>
+    <video src="videos/video2.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+    <video src="videos/video3.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+    <video src="videos/video4.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+    <video src="videos/video6.mp4"  class="shadow border-0" controls title="Daily Videos"></video>
+  </div>
 </div> 
     
     
