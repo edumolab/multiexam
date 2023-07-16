@@ -61,6 +61,17 @@ rel="stylesheet"
 <link href="static/mdb.min.css" rel="stylesheet"/>
 
 <style>
+    @keyframes page-load { from { background-color: #0394fc; } to { background-color: #0313fc; } } 
+  	.page-loading::before { content:" "; display:block; position:fixed; z-index:10; height:2px; width:100%; top:0; left:0; background-color:#06D; animation: page-load infinite ease-out 2s; box-shadow:0 2px 2px rgba(0,0,0,.2); }
+		.box-model{
+			width: 100%;
+			margin: 0;
+			background: rgb(26, 2, 94);
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
   body{
     display: none;
   }
@@ -701,16 +712,7 @@ var users = [
     
 
    
-  /*    
-      const videos=[
-  "https://multiexam.vercel.app/videos/video2.mp4",
-  "https://multiexam.vercel.app/videos/video1.mp4",
-  "https://multiexam.vercel.app/videos/video3.mp4"
-  ]
-var randomVideos=Math.floor(Math.random()*videos.length)
-var videoBox=document.getElementById("videos")
-videoBox.src=videos[randomVideos]
-  */   
+  window.addEventListener("beforeunload",function(e){ document.body.className = "page-loading"; },false);   
 
       </script>
 </body>
