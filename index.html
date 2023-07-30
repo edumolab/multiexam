@@ -31,7 +31,7 @@
   
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          console.log("User is logged in:", user);
+          console.log("User is logged in:", user.uid);
           document.querySelector("body").style.display="block"
           // Add your code here to handle the logged-in user (e.g., display user-specific content)
         } else {
