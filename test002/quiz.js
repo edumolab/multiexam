@@ -605,6 +605,9 @@ function examEnd(){
 	preview .style.display="block";
 	audio15.addEventListener("ended",function(){
 		stopRecording();
-
+    document.querySelector(".uploader").style.display="block"
+		setTimeout(()=>{
+			window.location.href='https://multiexam.vercel.app/speaking-mock.html'
+		}, 45000)
 });		
 }

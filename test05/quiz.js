@@ -24,7 +24,6 @@ const rectext=document.getElementById("rec-text");
 const beep=document.getElementById("beep");
 const timer=document.getElementById("timer");
 const que_id=document.getElementById("que-id");
-const downloadAudio =document.getElementById("downloadButton");
 const preview =document.getElementById("audio-playback")
 let recorder, audio_stream;
 
@@ -34,7 +33,6 @@ rectext.style.display="none"
 part1.style.display="none";
 preview .style.display="none";
 //Recorder
-startRecording();
 function startRecording() {
   navigator.mediaDevices.getUserMedia({ audio: true })
     .then(function (stream) {
@@ -68,11 +66,7 @@ function stopRecording() {
     recorder.stop();
   }
 
-  function downloadRecording(){
-    var name = new Date();
-    var res = name.toISOString().slice(0,10)
-    downloadAudio.download = res + '.mp3';
-}
+ 
 
 //Scale UpandDown
 var TextSize=document.getElementById("question-bar");
@@ -103,6 +97,7 @@ var TextSize=document.getElementById("question-bar");
 
 //Step1
 function step0() {
+	startRecording();
 	welcome.style.display="none";
 	part1.style.display="block"
 	que.innerHTML="Do you use computers?";
@@ -664,8 +659,10 @@ function examEnd(){
 	preview .style.display="block";
 	audio15.addEventListener("ended",function(){
 		stopRecording();
-		document.getElementById("alert-time").style.display="block"
-		document.getElementById("home").style.display="block"
+		document.querySelector(".uploader").style.display="block"
+		setTimeout(()=>{
+			window.location.href='https://multiexam.vercel.app/speaking-mock.html'
+		}, 45000)
 
 });		
 }

@@ -9,9 +9,51 @@
         <link rel="stylesheet" href="../css/style.css">
         
      <style>
-#waveform{
-  width:300px;
+      .uploader{
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            z-index: 999;
+            display: none;
+        }
+ 
+ .loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%,-45%);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+} 
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #FF3D00;
 }
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
       .microphone-wave {
   width: 30px;
   height: 30px;
@@ -41,6 +83,11 @@
      </style>
     </head>
     <body>
+      <section class="uploader">
+            <span style="position: absolute; top: 45%; left: 50%; color: white; font-weight: bold; transform: translate(-45%, -50%);">Uploading to server...</span>
+        <span class="loader"></span>
+
+</section>
         <!---welcome--->
 <div id="welcome">
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
