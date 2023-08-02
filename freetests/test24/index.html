@@ -15,7 +15,7 @@
       width: 100%;
       min-height: 100vh;
       background: linear-gradient(90deg, #cc00ff,#00ffcc);
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       color: white;
       line-height: 2;
@@ -152,65 +152,37 @@ a{
 </head>
 <body>
   <div class="container">
-    <h2>Welcome to Multi Level Speaking Exam</h2>
-    <span class="note">Siz bilan bog'lanishimiz uchun ismingiz va Telegram <span class="link-text">@username</span> ni yozing!</span>
+    <h2 style="margin: 30px 0;">Validate Your Identity</h2>
+    <span class="note">Natijangizni olish uchun mavjud telegram <span class="link-text">@username</span> ni kiriting!</span>
 <form id="form">
-	<input type="text" name="" id="inputField" placeholder="Your FullName Telegram@username">
-  <input  id="sendBtn" type="button" value="Send" onclick="sendData()">
-</form>
-<a href="verify.html"><input  id="nextBtn" type="button" value="Verify Your Id"></a>
-<p class="message"></p>
+  <div>
+	<input type="text" name="" id="inputField" placeholder="@username">
 </div>
+  <input  id="sendBtn" type="button" onclick="validateUser()" value="Send">
+</form>
+</div>
+
+
+<script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
 <script>
-   var nextBtn = document.getElementById("nextBtn")
-    const forma = document.getElementById("form")
-  nextBtn.style.display="none";
-function sendData() {
-  const botApiToken = '6286896160:AAEDJPAnegyosnf4KlYbBMTJayMJxXggMvg';
-  const messageBox= document.querySelector(".message")
-  const chatId = '-1001575547893';
-  const input = document.getElementById('inputField').value;
-  const sendBtn = document.getElementById("sendBtn")
- 
+var username=localStorage.getItem("name")
+$("#inputField").val(username)
+function validateUser(){
+var inputField=$("#inputField").val()
+localStorage.setItem("name", inputField)
 
-  const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${input}+"Test:24"`;
-
-  fetch(url)
-    .then(response => {
-      messageBox.innerHTML="Sent Successfully!";
-      messageBox.style.color="#00ff00";
-      forma.style.display="none";
-      nextBtn.style.display="block";
-      document.querySelector(".note").style.display="none";
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-        messageBox.innerHTML="Oh, Failed!";
-      messageBox.style.color="#ff0000"
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
-
-document.onkeypress = function (event) {
-event = (event || window.event);
-if (event.keyCode == 123) {
-return false;
-}
-}
-
-document.onmousedown = function (event) {
-event = (event || window.event);
-if (event.keyCode == 123) {
-return false;
-}
-}
-document.onkeydown = function (event) {
-event = (event || window.event);
-if (event.keyCode == 123) {
-return false;
-}
+  if (inputField.includes('@')) {
+    window.location.href="test05/index.html" 
+  }
+  else if(inputField==="" ){
+    alert("Enter your telegram Username!")
+    return
+    
+  }
+  else{
+    alert("Enter your telegram username with '@'")
+     return
+  }
 }
 </script>
 </body>

