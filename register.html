@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Page</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+  <h1>Registration Page</h1>
+
+  <form id="register-form">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCPcm6WOfOOwzKBRBqNxgB71ea2TduQ-Qg",
+  authDomain: "exam-online-384406.firebaseapp.com",
+  databaseURL: "https://exam-online-384406-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "exam-online-384406",
+  storageBucket: "exam-online-384406.appspot.com",
+  messagingSenderId: "685614981927",
+  appId: "1:685614981927:web:3cba11674fdc0391723f02",
+  measurementId: "G-B2P1J1FSK7"
+};
+
+    firebase.initializeApp(firebaseConfig);
+
+    document.getElementById("register-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(function(userCredential) {
+          console.log("User registered successfully:", userCredential.user);
+          var user = userCredential.user;
+          // Save additional user data to the database
+          var userData = {
+            email: user.email,
+            uid: user.uid
+          };
+
+          // Get a reference to the Firebase Realtime Database
+          var database = firebase.database();
+          // Create a new user reference using the user's UID
+          var userRef = database.ref("users/" + user.uid);
+          // Set the user data under the user reference
+          userRef.set(userData);
+        
+         
+        })
+        .catch(function(error) {
+          alert("Registration error:", error);
+          // Handle registration errors
+        });
+    });
+  </script>
+</body>
+</html>

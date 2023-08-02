@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCPcm6WOfOOwzKBRBqNxgB71ea2TduQ-Qg",
+    authDomain: "exam-online-384406.firebaseapp.com",
+    projectId: "exam-online-384406",
+    storageBucket: "exam-online-384406.appspot.com",
+    messagingSenderId: "685614981927",
+    appId: "1:685614981927:web:3cba11674fdc0391723f02",
+    measurementId: "G-B2P1J1FSK7"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log("User is logged in:", user);
+          document.querySelector("body").style.display="block"
+          // Add your code here to handle the logged-in user (e.g., display user-specific content)
+        } else {
+          console.log("No user is logged in. Redirecting to login page...");
+          window.location.href = "login.html"; // Redirect to the login page if not logged in
+        }
+      });
+</script>
+	<title>Speaking Practice</title>
+	<style>
+		body{
+    display: none;
+  }
+		a{
+			text-decoration: none;
+			color:gray;
+		}
+
+		.flex{
+			display: flex;
+		}
+
+		.items-center{
+			align-items: center;
+		}
+
+		.justify-center{
+			justify-content: center	;
+		}
+
+		.justify-around{
+			justify-content: space-around;
+		}
+
+		.mx-2{
+			margin: 0 2em;
+		}
+
+		.my{
+			margin: 2em 0;
+		}
+
+		.rounded-lg{
+			border-radius: 15px;
+		}
+
+		ons-card{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<ons-page>
+	<ons-toolbar style="background-color: #151436;">
+		<div class="center" style="color:white; font-size: 18px; font-weight: bold;">
+			Speaking Practice Topics
+		</div>
+	</ons-toolbar>
+	<main id="card" style="display:flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 30px 0;">
+		
+		
+
+	</main>
+</ons-page>
+
+<script>
+
+var topics=[
+{
+	title:"Movie",
+	link:"freetests/test6/index.html"
+},
+{
+	title:"Technology",
+	link:"freetests/test7/index.html"
+},
+{
+	title:"Music",
+	link:"freetests/test8/index.html"
+},
+{
+	title:"Newspaper",
+	link:"freetests/test9/index.html"
+},
+{
+	title:"Holiday",
+	link:"freetests/test10/index.html"
+},
+{
+	title:"Hometown",
+	link:"freetests/test11/index.html"
+},
+{
+	title:"Hometown 2",
+	link:"freetests/test12/index.html"
+},
+{
+	title:"Jobs",
+	link:"freetests/test13/index.html"
+},
+{
+	title:"Accomodation",
+	link:"freetests/test14/index.html"
+},
+{
+	title:"Free Time",
+	link:"freetests/test15/index.html"
+},
+{
+	title:"Work and Study",
+	link:"freetests/test16/index.html"
+},
+{
+	title:"Clothes",
+	link:"freetests/test17/index.html"
+},
+{
+	title:"Sport",
+	link:"freetests/test18/index.html"
+},
+{
+	title:"Festival",
+	link:"freetests/test19/index.html"
+},
+{
+	title:"Music & Newspapers",
+	link:"freetests/test20/index.html"
+},
+{
+	title:"Time Management",
+	link:"freetests/test21/test03/index.html"
+},
+{
+	title:"Reading books",
+	link:"freetests/test22/index.html"
+},
+{
+	title:"Math",
+	link:"freetests/test23/test04/index.html"
+},
+{
+	title:"Shopping",
+	link:"freetests/test24/test05/index.html"
+}
+]	
+
+var container=document.getElementById("card")
+
+topics.forEach((el)=>{
+	var ons_card=document.createElement("a")
+	ons_card.href=el.link
+	ons_card.classList.add("rounded-lg", "card") 
+	var ons_div=document.createElement("div")
+	var ons_title=document.createElement("span")
+	ons_title.classList.add("title")
+	ons_title.textContent=el.title
+	ons_div.appendChild(ons_title)
+	ons_div.classList.add("flex", "items-center", "justify-around")   
+	var ons_icon=document.createElement("ons-icon")
+	ons_icon.style.color="dodgerblue"
+	ons_icon.style.padding="0 10px"
+	ons_icon.setAttribute("icon", "md-mic")
+	ons_div.appendChild(ons_icon)
+	ons_card.appendChild(ons_div)
+	container.appendChild(ons_card)
+})
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics</title>
+    <link rel="manifest" href="manifest.json" />
+    <link href="static/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="static/fontawesome/css/all.min.css" />
+<!-- Google Fonts -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCPcm6WOfOOwzKBRBqNxgB71ea2TduQ-Qg",
+    authDomain: "exam-online-384406.firebaseapp.com",
+    projectId: "exam-online-384406",
+    storageBucket: "exam-online-384406.appspot.com",
+    messagingSenderId: "685614981927",
+    appId: "1:685614981927:web:3cba11674fdc0391723f02",
+    measurementId: "G-B2P1J1FSK7"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log("User is logged in:", user);
+          document.querySelector("body").style.display="block"
+          document.querySelector("#user").innerHTML="Welcome, User"
+          document.querySelector("#login").style.display="none"
+          document.querySelector("#logout").style.display="inline-block"
+          // Add your code here to handle the logged-in user (e.g., display user-specific content)
+        } else {
+          console.log("No user is logged in. Redirecting to login page...");
+          document.querySelector("#login").style.display="inline-block"
+          document.querySelector("#logout").style.display="none"
+        }
+      });
+
+     function  logOut() {
+      firebase.auth().signOut()
+        .then(function() {
+          console.log("User is logged out.");
+          window.location.href = "login.html"; // Redirect to the login page after logout
+        })
+        .catch(function(error) {
+          console.log("Logout error:", error);
+          // Add your code here to handle logout errors (if any)
+        });
+    };
+  </script>
+
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link href="static/mdb.min.css" rel="stylesheet"/>
+
+<style>
+
+  #logout{
+    display: none;
+  }
+  
+    .card{
+        cursor: pointer;
+
+    }
+  .container{
+    margin-bottom: 120px;
+  }
+  a{
+    text-decoration: none;
+    color: transparent;
+  }
+  
+
+.footer-menu{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height: 60px;
+    z-index: 999;
+    position: fixed;
+    padding:0 5px;
+    bottom: 0;
+    left:0;
+    background-color: rgb(255, 255, 255);
+    box-shadow:0 -4px 5px rgba(177, 177, 177, 0.5);
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+}
+
+.link{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  color:rgb(160, 159, 159);
+  text-decoration: none;
+}
+
+.link>span{
+  font-size:12px;
+}
+
+.link-active{
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+  color:rgb(30, 48, 80);
+}
+
+.icon-menu{
+  font-size:22px;
+}
+  ::-webkit-scrollbar{
+  display: none;
+}
+/* Course Card Styles */
+.card1 {
+  width: 300px;
+  background-color: #252352;  
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-x: scroll;
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+}
+
+.card1 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card1 h2 {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.card1 p {
+  font-size: 16px;
+  margin: 20px;
+}
+
+.card1 .button {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.card1 .button:hover {
+  background-color: #2980b9;
+}
+
+/* Course Slider Styles */
+.course-slider {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Course Card Styles */
+  .card1 {
+    width: 200px;
+    margin-right: 10px;
+    overflow-x: scroll;
+  }
+  
+  .card1 img {
+    height: 150px;
+  }
+  
+  .card1 h2 {
+    font-size: 20px;
+    margin: 10px;
+  }
+  
+  .card1 p {
+    font-size: 14px;
+    margin: 10px;
+  }
+  
+  .card1 .button {
+    font-size: 14px;
+    margin: 10px auto;
+    padding: 8px;
+  }
+  
+  /* Course Slider Styles */
+  .course-slider {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+  }
+}
+
+video{
+  border: 1px solid transparent;
+  border-radius: 30px;
+}
+
+.video-slider {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+@media only screen and (max-width: 768px) {
+  /* Course Card Styles */
+   .video-slider {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+  } 
+  video{
+  border: 1px solid transparent;
+  border-radius: 30px;
+  width:300px;
+  height: 300px;
+  height:auto;
+  background-color: #252352;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-x: scroll;
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+}
+}
+    
+
+#transition{
+  display: none;
+  width: 100%;
+  height: 8000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#tr-text{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: black;
+}
+
+body{
+  background-color: #151436;
+}
+
+.Card-bg{
+  background-color: #322f65;
+}
+
+.arrow-1{
+     background: linear-gradient(90deg, rgb(48, 188, 243),rgb(0, 102, 255));
+    }
+
+    .arrow-2{
+     background: linear-gradient(90deg, rgb(0, 228, 133),rgb(6, 148, 93));
+    }
+
+    .arrow-3{
+      background: linear-gradient(90deg, rgb(125, 0, 228),rgb(79, 6, 148));
+    }
+
+
+    .arrow-4{
+      background: linear-gradient(90deg, rgb(252, 164, 2),rgb(243, 208, 11));
+    }
+
+    .arrow-5{
+      background: linear-gradient(90deg, rgb(2, 252, 177),rgb(54, 238, 152));
+    }
+
+    .arrow-6{
+      background: linear-gradient(90deg, rgb(252, 2, 169),rgb(243, 11, 108));
+    }
+    
+    .arrow-7{
+     background: linear-gradient(90deg, rgb(37, 150, 190),rgb(22, 93, 119, 1));
+    }
+
+     .arrow-8{
+     background: linear-gradient(90deg, rgb(111, 220, 247),rgb(78, 248, 177));
+    }
+
+    .card-icon{
+        font-size: 30px;
+    }
+
+    .card-1{
+      background: linear-gradient(90deg, rgb(48, 188, 243),rgb(0, 102, 255));
+      color: white;
+    }
+
+    .card-2{
+      background: linear-gradient(90deg, rgb(0, 228, 133),rgb(6, 148, 93));
+      color: white;
+    }
+
+    .card-3{
+      background: linear-gradient(90deg, rgb(125, 0, 228),rgb(79, 6, 148));
+      color: white;
+    }
+
+    .card-4{
+      background: linear-gradient(90deg, rgb(252, 164, 2),rgb(243, 208, 11));
+      color: white;
+    }
+
+    .card-5{
+      background: linear-gradient(90deg, rgb(2, 252, 177),rgb(54, 238, 152));
+      color: white;
+    }
+
+    .card-6{
+      background: linear-gradient(90deg, rgb(252, 2, 169),rgb(243, 11, 108));
+      color: white;
+    }
+    
+    .card-7{
+      background: linear-gradient(90deg, rgb(37, 150, 190),rgb(22, 93, 119, 1));
+      color: white;
+    }
+
+    .card-8{
+      background: linear-gradient(90deg, rgb(111, 220, 247),rgb(78, 248, 177));
+      color: white;
+    }
+    
+    .card-text{
+        font-size: 30px;
+    }
+
+    @media screen and (max-width:660px) {
+      .card-text{
+        font-size: 23px;
+    }
+
+    .card-icon{
+        font-size: 23px;
+    }
+    }
+
+    @media screen and (max-width:335px) {
+      .card-text{
+        font-size: 18px;
+    }
+
+    .card-icon{
+        font-size: 18px;
+    }
+    }
+
+    @media screen and (max-width:300px) {
+      .card-text{
+        font-size: 14px;
+    }
+
+    .card-icon{
+        font-size: 14px;
+    }
+    }
+
+</style>
+</head>
+<body>
+<nav class="navbar shadow fixed-top" style="background-color: #131224;">
+        <a class="navbar-brand mx-4 fw-bold " href="javascript:void()" style="color:rgb(252, 219, 34) ;">ExamOnline Pro</a>
+        <button id="login" onclick="window.location.href='login.html'" class="btn btn-primary mx-2">Login</button>
+        <button id="logout" onclick="logOut()" class="btn btn-primary mx-2">Logout</button>
+    </nav>
+<div class="container" style="min-height:100vh">
+    <div class="d-md-flex mt-5 pt-5 d-sm-block justify-content-center">
+      <div class="row">  
+        <h5 id="user" class="mt-2 text-white py-3">Welcome, Guest!</h5>
+    <a href="speaking-mock.html" class="col-md-12">
+        <div class="card my-1 shadow-sm Card-bg">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                  <i class="fa fa-microphone card-icon card-1 bg-white rounded px-3  py-3"></i>
+                  <p class="card-text text-white mx-3">Speaking Mock</p>
+              </div>
+                <span class="arrow-1 rounded-circle py-2 px-3">
+                  <i class="fa fa-chevron-right text-white"></i>
+                </span>
+            </div>  
+        </div>
+    </a>
+
+     <a href="speaking-practice.html" class="col-md-12">
+        <div class="card my-1 shadow-sm Card-bg">
+            <div class="card-body d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                  <i class="fa fa-microphone card-icon card-4 bg-white rounded px-3  py-3"></i>
+                  <p class="card-text text-white mx-3">Speaking Practice</p>
+              </div>
+                <span class="arrow-4 rounded-circle py-2 px-3">
+                  <i class="fa fa-chevron-right text-white"></i>
+                </span>
+            </div>  
+        </div>
+    </a>
+<!---
+    <a href="" class="col-md-12" data-bs-toggle="modal" data-bs-target="#exampleModal">    
+      <div class="card my-1 shadow-sm Card-bg">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+              <i class="fa fa-pen card-icon card-2 bg-white rounded px-3  py-3"></i>
+              <p class="card-text text-white mx-3">Writing Checker</p>
+          </div>
+            <span class="arrow-2 rounded-circle py-2 px-3">
+              <i class="fa fa-chevron-right text-white"></i>
+            </span>
+        </div>  
+    </div>
+    </a>
+----->
+
+          
+ </div>
+    </div>
+</div>
+  
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+
+
+
+
+
+
+
+
+
+
+   
+        const links=['freetests/test6/index.html', 'freetests/test7/index.html','freetests/test8/index.html', 'freetests/test9/index.html', 'freetests/test10/index.html', 'freetests/test11/index.html', 'freetests/test12/index.html', 'freetests/test13/index.html', 'freetests/test14/index.html', 'freetests/test15/index.html', 'freetests/test16/index.html', 'freetests/test17/index.html', 'freetests/test18/index.html', 'freetests/test19/index.html','freetests/test20/index.html', 'freetests/test21/test03/index.html', 'freetests/test22/index.html', 'freetests/test23/test04/index.html','freetests/test24/test05/index.html']
+   
+      </script>
+</body>
+</html>
