@@ -29,17 +29,15 @@ part1.style.display="none";
 preview .style.display="none";
 //Recorder
 
-// Function to check if the user's device is iOS
-function isIOS() {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-}
+// Get the user agent string
+const userAgent = navigator.userAgent;
 
-// Check if the device is iOS and show/hide the "Next" button accordingly
-if (isIOS()) {
-  // Display the "Next" button
-  const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-  nextButton.style.display = "block";
-}
+if (/iPad|iPhone|iPod/.test(userAgent)) {
+	// Display the "Next" button
+	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
+	nextButton.style.display = "block";
+  }
+
 
 
 function startRecording() {
