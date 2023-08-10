@@ -152,6 +152,9 @@ function startCountdown() {
 function step1(){
 	que.innerHTML="How do you celebrate the festival?";
 	que_id.innerHTML=2
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio2.play()	
+	})
 	audio2.play();
 	audio2.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -192,6 +195,9 @@ function step1(){
 function step2(){
 	que.innerHTML="What is the most popular festival in your country?";
 	que_id.innerHTML=3
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio3.play()	
+	})
 	audio3.play();
 	audio3.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -231,6 +237,9 @@ function step2(){
 function step3(){
 	que.innerHTML="Do you like western festivals?";
 	que_id.innerHTML=4
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio4.play()	
+	})
 	audio4.play();
 	audio4.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -271,6 +280,9 @@ function step3(){
 function step4(){
 	que.innerHTML="Where do people usually go during festivals?";
 	que_id.innerHTML=5
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio5.play()	
+	})
 	audio5.play();
 	audio5.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -311,6 +323,9 @@ function step4(){
 function step5(){
 	que.innerHTML="With whom do you like to celebrate festivals?";
 	que_id.innerHTML=6
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio6.play()	
+	})
 	audio6.play();
 	audio6.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -351,6 +366,9 @@ function step5(){
 function part2(){
 	que.innerHTML='';
 	que_id.innerHTML=''
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio7.play()	
+	})
 	audio7.play();
 	section1.innerHTML=`<i class="fa fa-check"></i>`;
 	section2.classList.add("bg-success");
@@ -362,6 +380,9 @@ function part2(){
 function step6(){
 	que.innerHTML=`<p><b>Describe a piece of technology that you use a lot.</b></p><p>You should say:</p><ul><li>What is it?</li><li>What you use it for</li><li>how long you have been using it</li><li>and say how you would feel without it</li></ul><br><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Izoh yozish uchun"></textarea>`;
 	que_id.innerHTML=7
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio8.play()	
+	})
 	audio8.play();
 	audio8.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -401,6 +422,9 @@ function step6(){
 function part3(){
 	que.innerHTML='';
 	que_id.innerHTML=''
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio9.play()	
+	})
 	audio9.play();
 	section1.innerHTML=`<i class="fa fa-check"></i>`;
 	section2.innerHTML=`<i class="fa fa-check"></i>`;
@@ -416,6 +440,9 @@ function step7(){
 	que.innerHTML="In your opinion, is technology making people's lives easier?";
 	que_id.innerHTML=8
 	audio10.play();
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio10.play()	
+	})
 	audio10.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
@@ -457,6 +484,9 @@ function step7(){
 function step8(){
 	que.innerHTML="What kinds of modern technology do people rely on their daily life?";
 	que_id.innerHTML=9
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio11.play()	
+	})
 	audio11.play();
 	audio11.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -497,6 +527,9 @@ function step8(){
 function step9(){
 	que.innerHTML="How much has technology improved and how we communicate with each other?";
 	que_id.innerHTML=10
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio12.play()	
+	})
 	audio12.play();
 	audio12.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -537,6 +570,9 @@ function step9(){
 function step10(){
 	que.innerHTML="Do you think that the advance of technology has improved standards of education in schools?";
 	que_id.innerHTML=11
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio13.play()	
+	})
 	audio13.play();
 	audio13.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -578,6 +614,9 @@ function step10(){
 function step11(){
 	que.innerHTML="Do you think people rely too much on technology today?";
 	que_id.innerHTML=12
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio14.play()	
+	})
 	audio14.play();
 	audio14.addEventListener("ended", startCountdown);
 	//countdown 5 sec
@@ -613,6 +652,9 @@ function step11(){
 }
 
 function examEnd(){
+	document.getElementById("nextButton").addEventListener("click",()=>{
+	audio15.play()	
+	})
 	audio15.play();
 	que.innerHTML='';
 	que_id.innerHTML='';
