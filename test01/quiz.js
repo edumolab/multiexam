@@ -86,15 +86,27 @@ var TextSize=document.getElementById("question-bar");
  }
 
  //Fullscreen
- function toggleFullScreen() {
-	if (!document.fullscreenElement) {
-	  document.documentElement.requestFullscreen();
-	  document.getElementById("full-screen").innerHTML=`<i class="fa fa-compress"></i>`
-	} else if (document.exitFullscreen) {
-	  document.exitFullscreen();
-	 document.getElementById("full-screen").innerHTML=`<i class="fa fa-expand"></i>`
-	}
+
+function toggleFullScreen() {
+  const element = document.documentElement;
+
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    }
+    document.getElementById("full-screen").innerHTML = `<i class="fa fa-compress"></i>`;
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+    document.getElementById("full-screen").innerHTML = `<i class="fa fa-expand"></i>`;
   }
+}
+
   
 
 
