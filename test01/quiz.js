@@ -364,6 +364,7 @@ function step5(){
 	audio6.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q6").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -401,9 +402,10 @@ function part2(){
 	que.innerHTML='';
 	que_id.innerHTML=''
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q7").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q7 = document.getElementById("q7"); // Replace with your actual button ID
+	q7.addEventListener("click",()=>{
 	audio7.play()	
 	})
   }
@@ -416,12 +418,14 @@ function part2(){
 //step6
 
 function step6(){
+	document.getElementById("q7").style.display="none"
 	que.innerHTML=`<p><b>Describe a piece of technology that you use a lot.</b></p><p>You should say:</p><ul><li>What is it?</li><li>What you use it for</li><li>how long you have been using it</li><li>and say how you would feel without it</li></ul><br><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Izoh yozish uchun"></textarea>`;
 	que_id.innerHTML=7
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q8").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q8 = document.getElementById("q8"); // Replace with your actual button ID
+	q8.addEventListener("click",()=>{
 	audio8.play()	
 	})
   }
@@ -429,6 +433,7 @@ function step6(){
 	audio8.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q8").style.display="none"
 		let count = 60;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -465,9 +470,10 @@ function part3(){
 	que.innerHTML='';
 	que_id.innerHTML=''
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q9").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q9 = document.getElementById("q9"); // Replace with your actual button ID
+	q9.addEventListener("click",()=>{
 	audio9.play()	
 	})
   }
@@ -483,19 +489,22 @@ function part3(){
 
 
 function step7(){
+	document.getElementById("q9").style.display="none"
 	que.innerHTML="In your opinion, is technology making people's lives easier?";
 	que_id.innerHTML=8
 	audio10.play();
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q10").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q10 = document.getElementById("q10"); // Replace with your actual button ID
+	q10.addEventListener("click",()=>{
 	audio10.play()	
 	})
   }
 	audio10.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q10").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -535,9 +544,10 @@ function step8(){
 	que.innerHTML="What kinds of modern technology do people rely on their daily life?";
 	que_id.innerHTML=9
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q11").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q11 = document.getElementById("q11"); // Replace with your actual button ID
+	q11.addEventListener("click",()=>{
 	audio11.play()	
 	})
   }
@@ -545,6 +555,7 @@ function step8(){
 	audio11.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q11").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -582,9 +593,10 @@ function step9(){
 	que.innerHTML="How much has technology improved and how we communicate with each other?";
 	que_id.innerHTML=10
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q12").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q12 = document.getElementById("q12"); // Replace with your actual button ID
+	q12.addEventListener("click",()=>{
 	audio12.play()	
 	})
   }
@@ -592,6 +604,7 @@ function step9(){
 	audio12.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q12").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -629,9 +642,10 @@ function step10(){
 	que.innerHTML="Do you think that the advance of technology has improved standards of education in schools?";
 	que_id.innerHTML=11
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q13").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q13 = document.getElementById("q13"); // Replace with your actual button ID
+	q13.addEventListener("click",()=>{
 	audio13.play()	
 	})
   }
@@ -639,6 +653,7 @@ function step10(){
 	audio13.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q13").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -677,9 +692,10 @@ function step11(){
 	que.innerHTML="Do you think people rely too much on technology today?";
 	que_id.innerHTML=12
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q14").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q14 = document.getElementById("q14"); // Replace with your actual button ID
+	q14.addEventListener("click",()=>{
 	audio14.play()	
 	})
   }
@@ -687,6 +703,7 @@ function step11(){
 	audio14.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q14").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -719,9 +736,10 @@ function step11(){
 
 function examEnd(){
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q15").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q15 = document.getElementById("q15"); // Replace with your actual button ID
+	q15.addEventListener("click",()=>{
 	audio15.play()	
 	})
   }
