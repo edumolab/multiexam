@@ -152,7 +152,7 @@ function startCountdown() {
 	nextButton.style.display = "block";
 	}
   }
-		  }
+		  
 		}, 1000);
 	  }
 	
