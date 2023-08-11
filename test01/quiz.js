@@ -162,7 +162,7 @@ function step1(){
 		document.getElementById("q2").style.display="block"
 	// Display the "Next" button
 	const q2 = document.getElementById("q2"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	q2.addEventListener("click",()=>{
 	audio2.play()	
 	})
   }
