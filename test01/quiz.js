@@ -150,7 +150,7 @@ function startCountdown() {
 	// Display the "Next" button
 	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
 	nextButton.style.display = "block";
-	})
+	}
   }
 		  }
 		}, 1000);
