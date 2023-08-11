@@ -146,11 +146,6 @@ function startCountdown() {
 			timer.innerHTML="";
 			clearInterval(interval);
 			step1();
-	if (/iPad|iPhone|iPod/.test(userAgent)) {
-	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.style.display = "block";
-	}
   }
 		  
 		}, 1000);
@@ -164,8 +159,9 @@ function step1(){
 	que.innerHTML="How do you celebrate the festival?";
 	que_id.innerHTML=2
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q2").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
+	const q2 = document.getElementById("q2"); // Replace with your actual button ID
 	nextButton.addEventListener("click",()=>{
 	audio2.play()	
 	})
@@ -175,6 +171,7 @@ function step1(){
 	audio2.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q2").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -199,7 +196,7 @@ function step1(){
 				timer.innerHTML="";
 				clearInterval(interval);
 				step2();
-		
+				
 			  }
 			}, 1000);
 		  }
@@ -212,9 +209,10 @@ function step2(){
 	que.innerHTML="What is the most popular festival in your country?";
 	que_id.innerHTML=3
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q3").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q3 = document.getElementById("q3"); // Replace with your actual button ID
+	q3.addEventListener("click",()=>{
 	audio3.play()	
 	})
   }
@@ -222,6 +220,7 @@ function step2(){
 	audio3.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q3").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -246,7 +245,7 @@ function step2(){
 				timer.innerHTML="";
 				clearInterval(interval);
 				step3();
-		
+		        
 			  }
 			}, 1000);
 		  }
@@ -258,9 +257,10 @@ function step3(){
 	que.innerHTML="Do you like western festivals?";
 	que_id.innerHTML=4
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q4").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q4 = document.getElementById("q4"); // Replace with your actual button ID
+	q4.addEventListener("click",()=>{
 	audio4.play()	
 	})
   }
@@ -268,6 +268,7 @@ function step3(){
 	audio4.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q4").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -292,7 +293,6 @@ function step3(){
 				timer.innerHTML="";
 				clearInterval(interval);
 				step4();
-		
 			  }
 			}, 1000);
 		  }
@@ -305,9 +305,10 @@ function step4(){
 	que.innerHTML="Where do people usually go during festivals?";
 	que_id.innerHTML=5
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q5").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q5 = document.getElementById("q5"); // Replace with your actual button ID
+	q5.addEventListener("click",()=>{
 	audio5.play()	
 	})
   }
@@ -315,6 +316,7 @@ function step4(){
 	audio5.addEventListener("ended", startCountdown);
 	//countdown 5 sec
 	function startCountdown() {
+		document.getElementById("q5").style.display="none"
 		let count = 5;
 		timer.innerHTML += `${count} seconds`;
 		const interval = setInterval(() => {
@@ -339,7 +341,6 @@ function step4(){
 				timer.innerHTML="";
 				clearInterval(interval);
 				step5();
-		
 			  }
 			}, 1000);
 		  }
@@ -352,9 +353,10 @@ function step5(){
 	que.innerHTML="With whom do you like to celebrate festivals?";
 	que_id.innerHTML=6
 	if (/iPad|iPhone|iPod/.test(userAgent)) {
+		document.getElementById("q6").style.display="block"
 	// Display the "Next" button
-	const nextButton = document.getElementById("nextButton"); // Replace with your actual button ID
-	nextButton.addEventListener("click",()=>{
+	const q6 = document.getElementById("q6"); // Replace with your actual button ID
+	q6.addEventListener("click",()=>{
 	audio6.play()	
 	})
   }
