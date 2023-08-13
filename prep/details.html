@@ -140,6 +140,8 @@ document.getElementById("back").addEventListener("click", ()=>{
       function nextQuestion(){
   currentQuestion++
 if(currentQuestion===exam.questions.length){
+  $("#question-bar").html("")
+  $("#que-id").html("")
     const Text="This is the end of Part 1"
      const voiceName = "UK English Male";
       responsiveVoice.speak(Text, voiceName);  
