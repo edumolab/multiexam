@@ -136,7 +136,7 @@ $(document).ready(function(){
   $("#que-id").html(exam.questions[currentQuestion].number)
   $("#text").html(exam.text)
   document.title=exam.topic
-    wordValue=exam.question[currentFlashcard].question
+    wordValue=exam.question[currentQuestion].question
       const voiceName = "UK English Male";
       responsiveVoice.speak(wordValue, voiceName);  
   })
