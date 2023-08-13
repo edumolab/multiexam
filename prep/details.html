@@ -110,7 +110,7 @@ rel="stylesheet"
    </div>
  </div>
  </section>
-
+<button style="display:none" id="back" class="btn btn-primary">Go Back</button>
 <div id="text"></div>
 <audio id="beep" src="https://multiexam.vercel.app/freetests/test10/beep.mp3"></audio>
 
@@ -136,15 +136,20 @@ var beep = document.getElementById("beep")
 
       function nextQuestion(){
   currentQuestion++
+if(currentQuestion===exam.questions.length){
+    const Text="This is the end of Part 1"
+     const voiceName = "UK English Male";
+      responsiveVoice.speak(Text, voiceName);  
+    $("#back").show()
+    return
+}
+else {
   $("#question-bar").html(exam.questions[currentQuestion].question)
   $("#que-id").html(exam.questions[currentQuestion].number)
   wordValue=exam.questions[currentQuestion].question
       const voiceName = "UK English Male";
       responsiveVoice.speak(wordValue, voiceName, {onend: startCountdown});  
-      if(currentQuestion===exam.questions.length){
-          window.location.href='https://multiexam.vercel.app/prep/'
-          return
-      }
+}      
 
 //Next Question ends .....          
 }
