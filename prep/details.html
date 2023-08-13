@@ -112,7 +112,7 @@ rel="stylesheet"
  </section>
 
 <div id="text"></div>
-
+<audio id="beep" src="https://multiexam.vercel.app/freetests/test10/beep.mp3"></audio>
 
 
                 
@@ -122,6 +122,7 @@ rel="stylesheet"
 <script>
 var currentQuestion=0;
 let audioEl;
+var beep = document.getElementById("beep")
 
   const id = new URLSearchParams(window.location.search).get("id");
 
@@ -139,9 +140,43 @@ $(document).ready(function(){
   document.title=exam.topic
     wordValue=exam.questions[currentQuestion].question
       const voiceName = "UK English Male";
-      responsiveVoice.speak(wordValue, voiceName);  
+      responsiveVoice.speak(wordValue, voiceName, {onend: startCountdown});  
   })
-    
+
+
+   // Define a function to start the 5-second countdown
+      function startCountdown() {
+        let count = 5;
+        $("#timer").html(`${count} seconds`)
+        const interval = setInterval(() => {
+          count--;
+          $("#timer").html(`${count} seconds`)
+          if (count <= 0) {
+            beep.play();
+            clearInterval(interval);
+            start30SecondCountdown();
+          }
+        }, 1000);
+      }
+
+      // Define a function to start the 30-second countdown
+      function start30SecondCountdown() {
+        let count = 30;
+         $("#timer").html(`${count} seconds`)
+        const interval = setInterval(() => {
+          count--;
+           $("#timer").html(`${count} seconds`)
+          if (count <= 0) {
+            t $("#timer").html("--:--")
+            clearInterval(interval);
+            //showNextQuestion();
+
+          }
+        }, 1000);
+      }
+
+
+   //Global function ends here...   
   }
 
 window.addEventListener("DOMContentLoaded", ()=> renderdetails())
