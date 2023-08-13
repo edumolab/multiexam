@@ -41,7 +41,7 @@ const renderwords= async ()=>{
         const data=await res.json()     
         data.forEach((el)=>{
           box+=`
-          <a href="details?id=${el.id}" class="card col-md-3">
+          <a href="details?id=${el.id}" class="card col-md-3 d-flex justify-content-center align-items-center bg-primary text-white">
             <h3 class="title">${el.topic}</h3>
             </a>
             `
