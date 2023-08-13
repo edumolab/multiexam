@@ -123,6 +123,9 @@ rel="stylesheet"
 var currentQuestion=0;
 let audioEl;
 var beep = document.getElementById("beep")
+document.getElementById("back").addEventListener("click", ()=>{
+    window.location.href='prep/index.html'
+})
 
   const id = new URLSearchParams(window.location.search).get("id");
 
