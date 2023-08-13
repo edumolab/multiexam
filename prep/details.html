@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="Describe you hometown | Practice 1">
+    <meta name="keywords" content="Multi Level Speaking, Multilevel, Multilevel testlari">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+rel="stylesheet"
+/>
+
+<style>
+
+     #refresh-btn{
+        display: none;
+    }
+
+    #next-btn{
+        display: none;
+    }
+    #downloadContainer{
+        display: none;
+    }
+
+    #downloadButton{
+        display: none;
+    }
+
+    #audio-playback{
+        display: none;
+    }
+
+
+
+    #timer{
+            font-size: 16px;
+        }
+
+    @media screen and (max-width:450px) {
+         #watch{
+            display: none;
+        }
+
+        #timer{
+            font-size: 13px;
+        }
+    }
+
+    @media screen and (max-width:350px) {
+        #watch{
+            display: none;
+        }
+        #timer{
+            font-size: 12px;
+        }
+    }
+
+</style>
+
+    <title></title>
+
+</head>
+<body>
+    <div class="container">
+ 
+<section class="container my-3 pt-2 shadow-sm border-1" style="border: 1px solid lightgrey; border-radius: 5px;">
+ <div class="row">
+   <div class="col-md-5 py-3">
+     <div class="card">
+       <div class="card-body">
+         <div class="header-question d-flex justify-content-between align-items-center">
+           <span class="badge rounded-pill text-light bg-primary border-0 px-5 py-2">Question# <span id="que-id"></span></span>
+           <div>
+           <i class="fa fa-microphone text-primary mx-1" id="watch"></i></div>
+         </div>
+        
+         <div id="question-bar">
+         </div>
+       </div>
+     </div>
+   </div>
+   <!----Right side--->
+   <div class="col-md-7 py-3">
+     <div class="card" id="card">
+       <div class="card-body">
+         <div class="header-question d-flex justify-content-around align-items-center">
+           <button class="btn btn-primary w-100 fw-bold py-1">
+            <i class="fa fa-stopwatch text-light" style="font-size:16px"></i><span class=" px-2" id="timer"></span>
+           </button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ </section>
+
+<div id="text"></div>
+
+
+
+                
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var currentQuestion=0;
+let audioEl;
+
+  const id = new URLSearchParams(window.location.search).get("id");
+
+  const renderdetails= async ()=>{
+    const res= await fetch('https://speaking-practice-kappa.vercel.app/part1/'+ id);
+    var exam= await res.json();
+
+
+//Set initial page
+
+$(document).ready(function(){
+  $("#question-bar").html(exam.questions[currentQuestion].question)
+  $("#que-id").html(exam.questions[currentQuestion].number)
+  $("#text).html(exam.text)
+  document.title=exam.topic
+    wordValue=exam.question[currentFlashcard].question)
+      const voiceName = "UK English Male";
+      responsiveVoice.speak(wordValue, voiceName);  
+  })
+    
+  }
+
+window.addEventListener("DOMContentLoaded", ()=> renderdetails())
+</script>
+
+
+
+
+</body>
+</html>
