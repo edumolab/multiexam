@@ -131,6 +131,25 @@ var beep = document.getElementById("beep")
     var exam= await res.json();
 
 
+
+//NextQuestion Function
+
+      function nextQuestion(){
+  currentQuestion++
+  $("#question-bar").html(exam.questions[currentQuestion].question)
+  $("#que-id").html(exam.questions[currentQuestion].number)
+  wordValue=exam.questions[currentQuestion].question
+      const voiceName = "UK English Male";
+      responsiveVoice.speak(wordValue, voiceName, {onend: startCountdown});  
+      if(currentQuestion===exam.questions.length){
+          window.location.href='https://multiexam.vercel.app/prep/'
+          return
+      }
+
+//Next Question ends .....          
+}
+      
+
 //Set initial page
 
 $(document).ready(function(){
@@ -141,7 +160,8 @@ $(document).ready(function(){
     wordValue=exam.questions[currentQuestion].question
       const voiceName = "UK English Male";
       responsiveVoice.speak(wordValue, voiceName, {onend: startCountdown});  
- 
+})
+ //Initial ends here.... 
 
 
    // Define a function to start the 5-second countdown
@@ -169,13 +189,12 @@ $(document).ready(function(){
           if (count <= 0) {
             $("#timer").html("--:--")
             clearInterval(interval);
-            //showNextQuestion();
+            nextQuestion();
 
           }
         }, 1000);
       }
-//Initial ends here.... 
-})
+
 
    //Global function ends here...   
   }
