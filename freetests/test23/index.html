@@ -1,217 +1,228 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
-    .container{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      min-height: 100vh;
-      background: linear-gradient(90deg, #cc00ff,#00ffcc);
-      justify-content: center;
-      align-items: center;
-      color: white;
-      line-height: 2;
-    }
-
-    h2{
-      font-family: sans-serif;
-      font-size: 30 px;
-    }
-
-    form{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 400px;
-      height: 100px;
-      background: white;
-      color:blue;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      margin-top: 30px;
-      box-shadow: 0 1px 7px 5px rgba(0,0,0,0.1);
-
-    }
-
-    input[type="text"]{
-      width: 280px;
-      padding: 10px;
-      border: 2px solid #0000ff;
-      border-radius: 5px;
-      margin: 0 2px;
-
-    }
-
-    input[type="button"]{
-     border: 2px solid #0000ff;
-      border-radius: 5px;
-      margin: 0 2px;
-      padding: 10px; 
-      background: #0000ff;
-      color:#ffffff;
-    }
-#nextBtn{
-      border: 2px solid white;
-      border-radius: 5px;
-      margin: 0 2px;
-      padding: 10px;
-      width: 250px; 
-      background: white;
-      color:black;
-      margin: 5px 0;
-
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+     <style>
+      .microphone-wave {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e60606;
+  position: relative;
+  animation: blink-mic 1s linear infinite;
+  margin-top: 30px;
 }
 
-a{
-  text-decoration: none;
-  color: black;
+@keyframes blink-mic {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 
-    .message{
-       font-size: 20px;
-       font-weight: bold;
-    }
-
-    @media screen and (max-width:445px){
-      h2{
-        font-size: 18px;
-      }
-
-      .note{
-      width: 300px;
-      background-color: white;
-      padding:5px;
-      color:rgb(48, 47, 47);
-      border-radius: 3px;
-    }
-
-      form{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 350px;
-      height: 100px;
-      background: white;
-      color:blue;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      margin-top: 30px;
-      box-shadow: 0 1px 7px 5px rgba(0,0,0,0.1);
-
-    }
-
-    input[type="text"]{
-      width: 220px;
-      padding: 10px;
-      border: 2px solid #0000ff;
-      border-radius: 5px;
-      margin: 0 2px;
-
-    }
-
-    input[type="button"]{
-     border: 2px solid #0000ff;
-      border-radius: 5px;
-      margin: 0 2px;
-      padding: 10px; 
-      background: #0000ff;
-      color:#ffffff;
-    }
-#nextBtn{
-      border: 2px solid rgb(65, 64, 64);
-      border-radius: 5px;
-      margin: 0 2px;
-      padding: 10px;
-      width: 180px; 
-      background: rgb(65, 64, 64);
-      color:rgb(255, 255, 255);
-      margin: 5px 0;
-
-}
-    }
-    .note{
-      background-color: white;
-      padding:15px;
-      border-radius: 3px;
-      color:rgb(48, 47, 47);
-    }
-    .link-text{
-      text-decoration: underline;
-      color:rgb(0, 68, 255);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>Welcome to Multi Level Speaking Exam</h2>
-    <span class="note">Siz bilan bog'lanishimiz uchun ismingiz va Telegram <span class="link-text">@username</span> ni yozing!</span>
-<form id="form">
-	<input type="text" name="" id="inputField" placeholder="Your FullName Telegram@username">
-  <input  id="sendBtn" type="button" value="Send" onclick="sendData()">
-</form>
-<a href="verify.html"><input  id="nextBtn" type="button" value="Verify Your Id"></a>
-<p class="message"></p>
-</div>
-<script>
-   var nextBtn = document.getElementById("nextBtn")
-    const forma = document.getElementById("form")
-  nextBtn.style.display="none";
-function sendData() {
-  const botApiToken = '6286896160:AAEDJPAnegyosnf4KlYbBMTJayMJxXggMvg';
-  const messageBox= document.querySelector(".message")
-  const chatId = '-1001575547893';
-  const input = document.getElementById('inputField').value;
-  const sendBtn = document.getElementById("sendBtn")
+ .uploader{
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            z-index: 999;
+            display: none;
+        }
  
-
-  const url = `https://api.telegram.org/bot${botApiToken}/sendMessage?chat_id=${chatId}&text=${input}+"Test:23"`;
-
-  fetch(url)
-    .then(response => {
-      messageBox.innerHTML="Sent Successfully!";
-      messageBox.style.color="#00ff00";
-      forma.style.display="none";
-      nextBtn.style.display="block";
-      document.querySelector(".note").style.display="none";
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-        messageBox.innerHTML="Oh, Failed!";
-      messageBox.style.color="#ff0000"
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
+ .loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%,-45%);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+} 
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #FF3D00;
 }
 
-document.onkeypress = function (event) {
-event = (event || window.event);
-if (event.keyCode == 123) {
-return false;
-}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+      .microphone-wave {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e60606;
+  position: relative;
+  animation: blink-mic 1s linear infinite;
+  margin-top: 30px;
 }
 
-document.onmousedown = function (event) {
-event = (event || window.event);
-if (event.keyCode == 123) {
-return false;
+@keyframes blink-mic {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-}
-document.onkeydown = function (event) {
-event = (event || window.event);
-if (event.keyCode == 123) {
-return false;
-}
-}
+
+     </style>
+    </head>
+    <body>
+      <section class="uploader">
+            <span style="position: absolute; top: 45%; left: 50%; color: white; font-weight: bold; transform: translate(-45%, -50%);">Evaluating Score ...</span>
+        <span class="loader"></span>
+
+</section>
+
+        <!---welcome--->
+<div id="welcome">
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow" style="width: 500px;">
+        <div class="card-header"><h3 class="text-dark text-center">Multi Level Speaking</h3></div>
+        <div class="card-body">
+         <h5 class="text-center">Welcome to Speaking Exam!</h5>
+         <p>Test contains the followings:</p>
+          <ul>
+            <li>Part 1: 6 questions</li>
+            <li>Part 2: Cue Card (duration: 2 minutes)</li>
+            <li>Part 3: 5 questions (related to Part 2)</li>
+          </ul>
+          <p class="text-dark text-center fw-bold">If you are ready Please, hit the "Start" button below!</p>
+           <center><button onclick="step0()" id="start-btn" class="btn btn-primary px-5 py-2" style="font-size: 17px;">Start</button></center>
+        </div>
+    </div>
+</div>
+</div>
+
+<!----welcome ends-->
+
+<div id="quizBar" style="display:none;">
+<div class="navbar navbar-expand-lg navbar-light bg-primary shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light fw-bold" href="#">Multi Level Speaking</a>
+        <div class="timer-bar text-light fw-bold" id="full-screen" onclick="toggleFullScreen()"><i class="fa fa-expand"></i></div>
+        </div>
+</div> 
+
+<div class="text-center my-5">
+    <span id="part1" class=" badge px-3 py-2 bg-success level-one fw-bold text-light mx-3">Part 1</span>
+    <span id="part2" class=" badge px-3 py-2  bg-primary level-two fw-bold text-light mx-3 rounded">Part 2</span>
+    <span id="part3" class=" badge  bg-primary px-3 py-2 level-three fw-bold text-light mx-3 rounded">Part 3</span>
+  </div>
+ 
+ <section class="container my-3 pt-2 shadow-sm border-1" style="border: 1px solid lightgrey; border-radius: 5px;">
+ <div class="row">
+   <div class="col-md-5 py-3">
+     <div class="card">
+       <div class="card-body">
+         <div class="header-question d-flex justify-content-between align-items-center">
+           <span class="badge rounded-pill text-light bg-primary border-0 px-5 py-2">Question# <span id="que-id"></span></span>
+           <div>
+           <i class="fa fa-volume-up text-primary mx-1"></i><input class="text-dark" type="range" id="audio_volume" min="0" max="1" step="0.01" name=""></div>
+         </div>
+         <hr>
+         <div class=" quiz-container mt-3 d-flex justify-content-center align-items-center">
+           <button class="btn btn-primary px-3 py-1 mx-3" onclick="sizeDown()">A-</button>
+            <button class="btn btn-primary px-3 py-1 mx-3" onclick="sizeUp()">A+</button>
+         </div>
+         <hr>
+         <div id="question-bar">
+         </div>
+         <audio src="../beep.mp3" id="beep"></audio>
+       </div>
+     </div>
+   </div>
+   <!----Right side--->
+   <div class="col-md-7 py-3">
+     <div class="card" id="card">
+       <div class="card-body">
+         <div class="header-question d-flex justify-content-around align-items-center">
+           <button class="btn btn-primary w-100 fw-bold py-1">
+            <i class="fa fa-stopwatch text-light" style="font-size:23px"></i><span class="text-light px-2" id="timer" style="width:50px; font-size: 23px;"></span>
+           </button>
+         </div>
+         <div class="recorder">
+         <span class="circle text-center"></span>
+         <center><div id="rec-icon" class="microphone-wave"></div>
+         <p id="rec-text" class="text-center">Recording...</p></center>
+         <div id="downloadContainer" class="d-flex flex-column">
+            <audio src="" controls id="audio-playback"></audio>
+            <a class="btn btn-primary text-white my-3" href="" download="" id="downloadButton">Download Answer</a>
+         </div>
+         </div>
+         
+       </div>
+     </div>
+   </div>
+ </div>
+ </section>
+
+
+
+<!------->
+                   
+                        <audio src="1.mp3" id="audio_1"></audio>
+                        </div>
+                        <audio src="2.mp3" id="audio_2"></audio>
+                        <audio src="3.mp3" id="audio_3"></audio>
+                        <audio src="4.mp3" id="audio_4"></audio>
+                        <audio src="5.mp3" id="audio_5"></audio>
+                        <audio src="6.mp3" id="audio_6"></audio>
+                        <audio src="part2/intro.mp3" id="audio_7"></audio>
+                        <audio src="part2/1.mp3" id="audio_8"></audio>
+                        <audio src="part3/intro.mp3" id="audio_9"></audio>
+                        <audio src="part3/1.mp3" id="audio_10"></audio>
+                        <audio src="part3/2.mp3" id="audio_11"></audio>
+                        <audio src="part3/3.mp3" id="audio_12"></audio>
+                        <audio src="part3/4.mp3" id="audio_13"></audio>
+                        <audio src="part3/5.mp3" id="audio_14"></audio>
+                        <audio src="part3/end.mp3" id="audio_15"></audio>
+                        
+                
+</div>
+
+<script>
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+    window.history.go(2);
+};
 </script>
-</body>
+
+        <script src="../recognition.js" type="module"></script>
+        <script src="quiz.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </html>
