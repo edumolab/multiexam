@@ -254,18 +254,18 @@ function scoreTranscript(words, sentences) {
       feedback: "Your speaking complexity is moderate. Continue to improve by adding more details and examples."
     };
     }
-    else if (wordsPerSentence >= 10 && wordsPerSentence <= 13) {
+    else if (wordsPerSentence >= 10 && wordsPerSentence <= 12) {
     return {
       score: randomBetween(20, 40),
       feedback: "Your speaking complexity is some moderate. Continue to improve by adding more details and examples, and try to practice more samples"
     };
-  } else if (wordsPerSentence > 13 && wordsPerSentence <= 17) {
+  } else if (wordsPerSentence > 12 && wordsPerSentence <= 15) {
     return {
       score: randomBetween(40, 55),
       feedback: "Your speaking complexity is good. Work on fluency and coherence for higher scores."
     };
   }
-  else if (wordsPerSentence > 17 && wordsPerSentence <= 30) {
+  else if (wordsPerSentence > 16 && wordsPerSentence <= 30) {
     return {
       score: randomBetween(55, 65),
       feedback: "Your speaking complexity is very well. Work on fluency and coherence for higher scores."
