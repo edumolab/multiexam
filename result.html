@@ -248,13 +248,13 @@ function scoreTranscript(words, sentences) {
       feedback: "Your speaking complexity is low. Try to use more varied vocabulary and sentence structures."
     };
   }
-    else if (wordsPerSentence >= 3 && wordsPerSentence <= 15) {
+    else if (wordsPerSentence >= 3 && wordsPerSentence <= 10) {
     return {
       score: randomBetween(10, 20),
       feedback: "Your speaking complexity is moderate. Continue to improve by adding more details and examples."
     };
     }
-    else if (wordsPerSentence >= 15 && wordsPerSentence <= 25) {
+    else if (wordsPerSentence >= 10 && wordsPerSentence <= 25) {
     return {
       score: randomBetween(20, 45),
       feedback: "Your speaking complexity is moderate. Continue to improve by adding more details and examples."
