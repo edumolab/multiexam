@@ -28,7 +28,7 @@ rel="stylesheet"
 
 	<title>Result</title>
 	<style>
-		#yakuniy{
+#yakuniy{
   padding: 20px;
 }
 
@@ -36,7 +36,10 @@ rel="stylesheet"
   display:block;
   font-weight: bold;
   color: blue;
-  
+}
+        
+#feedback{
+font-style: italic
 }
 
 
@@ -49,6 +52,7 @@ rel="stylesheet"
   border-radius: 30px;
   border: 1px solid #0000ff;
 }
+
 
 .span{
   color:#0000ff;
@@ -190,9 +194,8 @@ mark{
           <!------------Yakuniy page----------------->
           <section  class="container">
 		 <a class="text-decoration-none text-white" href="https://t.me/multilevel_speakApp" target="_blank"><button class="btn btn-primary my-3" style="border-radius: 30px;">Join Our Telegram Channel</button></a>
-            <div id="result">
-          </div>
-            
+            <div id="result"></div>
+            <div id="feedback"></div>
 
            <a href="https://multiexam.vercel.app/"><button class="home-back">Home Page</button></a>
           </section>
@@ -204,86 +207,69 @@ mark{
 
  <script>
 
-var userTranscript=localStorage.getItem('transcript')
+  var userTranscript = localStorage.getItem('transcript');
 
+        if (userTranscript === null) {
+            document.getElementById("result").innerHTML = `Overall: 0/75`;
+            document.getElementById("feedback").innerHTML = "You didn't provide any answer. Please speak and record your answers or check your microphone.";
+        } else {
+            console.log("Transcript:", userTranscript); // Check if userTranscript is retrieved correctly
 
-// Feature extraction functions
-function countWords(transcript) {
-  return transcript.split(/\s+/).length;
-}
+            // Feature extraction functions
+            function countWords(transcript) {
+                return transcript.split(/\s+/).length;
+            }
 
-function countSentences(transcript) {
-  return transcript.split(/[.!?]/).length - 1;
-}
+            function countSentences(transcript) {
+                return transcript.split(/[.!?]/).length - 1;
+            }
 
-// Calculate features
-const wordCount = countWords(userTranscript);
-const sentenceCount = countSentences(userTranscript);
+            // Calculate features
+            const wordCount = countWords(userTranscript);
+            const sentenceCount = countSentences(userTranscript);
 
-// Simple scoring function (this is a basic example and not a valid scoring method)
+            console.log("Word Count:", wordCount); // Check if wordCount is calculated correctly
+            console.log("Sentence Count:", sentenceCount); // Check if sentenceCount is calculated correctly
+
+// Simple scoring function with feedback messages
 function scoreTranscript(words, sentences) {
   const wordsPerSentence = words / sentences;
-  
-  if (wordsPerSentence < 5) {
-       let min = 1;
-      let max = 20;
-      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
-      
-    return randomBand; // Low complexity
-  } else if (wordsPerSentence < 15) {
-      let min = 20;
-      let max = 40;
-      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
-      
-    return randomBand; // Moderate complexity
-  } 
-    else if (wordsPerSentence < 30) {
-     let min = 40;
-      let max = 60;
-      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
-      
-    return randomBand;
-  } 
-    else {
-    let min = 60;
-      let max = 75;
-      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
-      
-    return randomBand;
+    console.log(wordsPerSentence)
+
+  if (wordsPerSentence > 1 && wordsPerSentence < 5) {
+    return {
+      score: randomBetween(1, 20),
+      feedback: "Your speaking complexity is low. Try to use more varied vocabulary and sentence structures."
+    };
+  } else if (wordsPerSentence >= 5 && wordsPerSentence <= 15) {
+    return {
+      score: randomBetween(20, 45),
+      feedback: "Your speaking complexity is moderate. Continue to improve by adding more details and examples."
+    };
+  } else if (wordsPerSentence > 15 && wordsPerSentence <= 30) {
+    return {
+      score: randomBetween(45, 60),
+      feedback: "Your speaking complexity is good. Work on fluency and coherence for higher scores."
+    };
+  } else {
+    return {
+      score: randomBetween(60, 75),
+      feedback: "Your speaking complexity is excellent. Keep up the good work!"
+    };
   }
 }
 
-// Calculate the score
-const userScore = scoreTranscript(wordCount, sentenceCount);
-document.getElementById("result").innerHTML=`Overall: ${userScore}/75`
-
-//console.log(`User's Score: ${userScore}`);
-
-/*    
-
-    let min = 42;
-      let max = 62;
-      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
-     document.write(randomBand)
-
- 
-
-
- var i = 0;
- var txt =""
- var speed = 50; 
-console.log(txt.length) 
-function typeWriter() {
-if (i < txt.length) {
-  document.getElementById("display").innerHTML+= txt.charAt(i);
-i++;
-setTimeout(typeWriter, speed);
-}
+// Helper function to generate a random number between min and max (inclusive)
+function randomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-*/
+// Calculate the score and feedback
+const { score: userScore, feedback: userFeedback } = scoreTranscript(wordCount, sentenceCount);
+document.getElementById("result").innerHTML = `Overall: ${userScore}/75`;
+document.getElementById("feedback").innerHTML = userFeedback;
 
-
+}
 
 
 
