@@ -239,7 +239,7 @@ function scoreTranscript(words, sentences) {
   if (wordsPerSentence > 1 && wordsPerSentence < 5) {
     return {
       score: randomBetween(1, 20),
-      feedback: "Your speaking complexity is low. Try to use more varied vocabulary and sentence structures."
+      feedback: "Your speaking complexity is low. Try to use more varied vocabulary and sentence structures. <br><b>Clarity and Pronunciation:</b><br>Focus on clear and accurate pronunciation. Make sure your words are understandable, and try to avoid speaking too fast. Enunciate your words properly.<br><b>Fluency and Coherence:</b><br> Aim to speak naturally and fluently. Use linking words like and, but, because, etc., to connect your ideas and sentences. Organize your responses logically.<br><b>Vocabulary and Language Range:<b><br>Utilize a varied vocabulary to express yourself effectively. Don't hesitate to use synonyms and descriptive words to avoid repetition.<br><b>Grammar Accuracy:</b><br>Pay attention to your grammar usage. Aim for correct verb tenses, subject-verb agreement, and sentence structure."
     };
   } else if (wordsPerSentence >= 5 && wordsPerSentence <= 15) {
     return {
