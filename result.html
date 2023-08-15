@@ -208,6 +208,10 @@ mark{
  <script>
 
   var userTranscript = localStorage.getItem('transcript');
+
+setTimeout(function(){
+  localStorage.removeItem('transcript')
+}, 60000)
 document.getElementById("home").addEventListener("click", ()=>{
     localStorage.removeItem('transcript')
 })
