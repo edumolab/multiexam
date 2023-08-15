@@ -197,7 +197,7 @@ mark{
             <div id="result"></div>
             <div id="feedback"></div>
 
-           <a href="https://multiexam.vercel.app/"><button class="home-back">Home Page</button></a>
+           <a href="https://multiexam.vercel.app/"><button class="home-back" id="home">Home Page</button></a>
           </section>
 
     </div>
@@ -208,7 +208,9 @@ mark{
  <script>
 
   var userTranscript = localStorage.getItem('transcript');
-
+document.getElementById("home").addEventListener("click", ()=>{
+    localStorage.removeItem('transcript')
+})
         if (userTranscript === null) {
             document.getElementById("result").innerHTML = `Overall: 0/75`;
             document.getElementById("feedback").innerHTML = "You didn't provide any answer. Please speak and record your answers or check your microphone.";
