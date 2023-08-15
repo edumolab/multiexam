@@ -242,7 +242,7 @@ function scoreTranscript(words, sentences) {
   const wordsPerSentence = words / sentences;
     console.log(wordsPerSentence)
 
-  if (wordsPerSentence > 1 && wordsPerSentence < 3) {
+  if (wordsPerSentence > 1 && wordsPerSentence < 5) {
     return {
       score: randomBetween(1, 10),
       feedback: "Your speaking complexity is low. Try to use more varied vocabulary and sentence structures."
@@ -254,17 +254,18 @@ function scoreTranscript(words, sentences) {
       feedback: "Your speaking complexity is moderate. Continue to improve by adding more details and examples."
     };
     }
-    else if (wordsPerSentence >= 10 && wordsPerSentence <= 25) {
+    else if (wordsPerSentence >= 10 && wordsPerSentence <= 15) {
     return {
       score: randomBetween(20, 45),
       feedback: "Your speaking complexity is moderate. Continue to improve by adding more details and examples."
     };
-  } else if (wordsPerSentence > 25 && wordsPerSentence <= 50) {
+  } else if (wordsPerSentence > 15 && wordsPerSentence <= 30) {
     return {
       score: randomBetween(45, 60),
       feedback: "Your speaking complexity is good. Work on fluency and coherence for higher scores."
     };
-  } else {
+  } 
+  else {
     return {
       score: randomBetween(60, 75),
       feedback: "Your speaking complexity is excellent. Keep up the good work!"
