@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,7 @@ rel="stylesheet"
   padding: 20px;
 }
 
-#result{
+.result{
   display:block;
   font-weight: bold;
   color: blue;
@@ -194,7 +195,7 @@ mark{
           <!------------Yakuniy page----------------->
           <section  class="container">
 		 <a class="text-decoration-none text-white" href="https://t.me/multilevel_speakApp" target="_blank"><button class="btn btn-primary my-3" style="border-radius: 30px;">Join Our Telegram Channel</button></a>
-            <div id="result"></div>
+              <div class="result">Overall Score: <span id="result"></span></div>
             <div id="feedback"></div>
 
            <a href="https://multiexam.vercel.app/"><button class="home-back" id="home">Home Page</button></a>
@@ -206,92 +207,158 @@ mark{
 
 
  <script>
+const transcript = localStorage.getItem('transcript');
+     if(transcript===null){
+         document.getElementById("result").innerHTML="You did not provide any response. Please, check your microphone!"
+     }
+     
+     
 
-  var userTranscript = localStorage.getItem('transcript');
-
-setTimeout(function(){
-  localStorage.removeItem('transcript')
-}, 60000)
-document.getElementById("home").addEventListener("click", ()=>{
-    localStorage.removeItem('transcript')
-})
-        if (userTranscript === null) {
-            document.getElementById("result").innerHTML = `Overall: 0/75`;
-            document.getElementById("feedback").innerHTML = "You didn't provide any answer. Please speak and record your answers or check your microphone.";
-        } else {
-            console.log("Transcript:", userTranscript); // Check if userTranscript is retrieved correctly
-
-            // Feature extraction functions
-            function countWords(transcript) {
-                return transcript.split(/\s+/).length;
-            }
-
-            function countSentences(transcript) {
-                return transcript.split(/[.!?]/).length - 1;
-            }
-
-            // Calculate features
-            const wordCount = countWords(userTranscript);
-            const sentenceCount = countSentences(userTranscript);
-
-            console.log("Word Count:", wordCount); // Check if wordCount is calculated correctly
-            console.log("Sentence Count:", sentenceCount); // Check if sentenceCount is calculated correctly
-
-// Simple scoring function with feedback messages
-function scoreTranscript(words, sentences) {
-  const wordsPerSentence = words / sentences;
-    console.log(wordsPerSentence)
-
-  if (wordsPerSentence > 1 && wordsPerSentence < 5) {
-    return {
-      score: randomBetween(1, 10),
-      feedback: "Your speaking complexity is low. Try to use more varied vocabulary and sentence structures."
-    };
-  }
-    else if (wordsPerSentence >= 3 && wordsPerSentence <= 10) {
-    return {
-      score: randomBetween(10, 20),
-      feedback: "Your speaking complexity is moderate. Continue to improve by adding more details and examples."
-    };
-    }
-    else if (wordsPerSentence >= 10 && wordsPerSentence <= 12) {
-    return {
-      score: randomBetween(20, 40),
-      feedback: "Your speaking complexity is some moderate. Continue to improve by adding more details and examples, and try to practice more samples"
-    };
-  } else if (wordsPerSentence > 12 && wordsPerSentence <= 15) {
-    return {
-      score: randomBetween(40, 55),
-      feedback: "Your speaking complexity is good. Work on fluency and coherence for higher scores."
-    };
-  }
-  else if (wordsPerSentence > 16 && wordsPerSentence <= 30) {
-    return {
-      score: randomBetween(55, 65),
-      feedback: "Your speaking complexity is very well. Work on fluency and coherence for higher scores."
-    };
-  } 
-  else {
-    return {
-      score: randomBetween(65, 75),
-      feedback: "Your speaking complexity is excellent. Keep up the good work!"
-    };
-  }
-}
-
-// Helper function to generate a random number between min and max (inclusive)
-function randomBetween(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// Calculate the score and feedback
-const { score: userScore, feedback: userFeedback } = scoreTranscript(wordCount, sentenceCount);
-document.getElementById("result").innerHTML = `Overall: ${userScore}/75`;
-document.getElementById("feedback").innerHTML = userFeedback;
-
-}
-
-
+// Counting the number of words in the transcript
+const wordCount = transcript.split(/\s+/).length; 
+     console.log(wordCount)
+     
+     if(wordCount>0 && wordCount<=30){
+      let min = 0;
+      let max = 5;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+       document.getElementById("result").innerHTML=randomBand
+       document.getElementById("feedback").innerHTML=`Your speaking level is very low. Practice to imporve your level.`
+         
+     }
+     else if(wordCount>31 && wordCount<=60){
+      let min = 6;
+      let max = 10;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+        document.getElementById("feedback").innerHTML=`Your speaking level is some low. Practice to imporve your level.`
+     }
+     else if(wordCount>61 && wordCount<=80){
+         let min = 11;
+      let max = 15;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+         document.getElementById("feedback").innerHTML=`Your speaking level is low. Practice to imporve your level.`
+     }
+     else if(wordCount>81 && wordCount<=100){
+         let min = 16;
+      let max = 20;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+         document.getElementById("feedback").innerHTML=`Your speaking level is low. Practice to imporve your level.`
+     }
+     else if(wordCount>101 && wordCount<=130){
+       let min = 21;
+      let max = 25;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+         document.getElementById("feedback").innerHTML=`Your speaking level is very low. Practice to imporve your level and learn more vocabulary.`
+     }
+     else if(wordCount>131 && wordCount<=170){
+       let min = 26;
+      let max = 30;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+         document.getElementById("feedback").innerHTML=`Your speaking level is very low. Practice to imporve your level and learn more vocabulary.`
+     }
+     else if(wordCount>171 && wordCount<=250){
+       let min =31;
+      let max = 35;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+         document.getElementById("feedback").innerHTML=`Your speaking level is very low. Practice to imporve your level and learn more vocabulary.`
+     }
+     else if(wordCount>251 && wordCount<=280){
+       let min =36;
+      let max = 40;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand;
+      document.getElementById("feedback").innerHTML=`
+<b>Clarity and Pronunciation:</b><br>
+Focus on clear and accurate pronunciation. Make sure your words are understandable, and try to avoid speaking too fast. Enunciate your words properly.
+<br>
+<b>Fluency and Coherence:</b>
+Aim to speak naturally and fluently. Use linking words like "and," "but," "because," etc., to connect your ideas and sentences. Organize your responses logically.
+<br>
+Vocabulary and Language Range:<br>
+Utilize a varied vocabulary to express yourself effectively. Don't hesitate to use synonyms and descriptive words to avoid repetition.
+<br>
+Grammar Accuracy:<br>
+Pay attention to your grammar usage. Aim for correct verb tenses, subject-verb agreement, and sentence structure.
+<br>
+Expand on Your Responses:<br>
+Instead of giving short answers, try to expand on your responses. Provide examples, reasons, and personal experiences to support your points.
+<br>
+Avoid Memorized Answers:<br>
+While preparation is important, avoid sounding overly rehearsed or robotic. Examiners appreciate genuine and spontaneous responses.
+<br>
+Practice:<br>
+Regularly practice speaking English on various topics to improve your confidence and fluency.`
+     }
+     else if(wordCount>281 && wordCount<=320){
+       let min =41;
+      let max = 45;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+         document.getElementById("feedback").innerHTML=`
+<b>Clarity and Pronunciation:</b><br>
+Focus on clear and accurate pronunciation. Make sure your words are understandable, and try to avoid speaking too fast. Enunciate your words properly.
+<br>
+<b>Fluency and Coherence:</b>
+Aim to speak naturally and fluently. Use linking words like "and," "but," "because," etc., to connect your ideas and sentences. Organize your responses logically.
+<br>
+Vocabulary and Language Range:<br>
+Utilize a varied vocabulary to express yourself effectively. Don't hesitate to use synonyms and descriptive words to avoid repetition.
+<br>
+Grammar Accuracy:<br>
+Pay attention to your grammar usage. Aim for correct verb tenses, subject-verb agreement, and sentence structure.
+<br>
+Expand on Your Responses:<br>
+Instead of giving short answers, try to expand on your responses. Provide examples, reasons, and personal experiences to support your points.
+<br>
+Avoid Memorized Answers:<br>
+While preparation is important, avoid sounding overly rehearsed or robotic. Examiners appreciate genuine and spontaneous responses.
+<br>
+Practice:<br>
+Regularly practice speaking English on various topics to improve your confidence and fluency.`
+     }
+     else if(wordCount>321 && wordCount<=360){
+       let min =46;
+      let max = 50;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+     }
+     else if(wordCount>361 && wordCount<=400){
+       let min =51;
+      let max = 55;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+     }
+     else if(wordCount>400 && wordCount<=700){
+       let min =55;
+      let max = 60;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+     }
+     else if(wordCount>700 && wordCount<=900){
+       let min =60;
+      let max = 65;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+     }
+     else if(wordCount>900 && wordCount<=1000){
+       let min =66;
+      let max = 70;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+     }
+     else if(wordCount>=1001){
+       let min =71;
+      let max = 75;
+      let randomBand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerHTML=randomBand
+     }
+     
 
 </script>
 </body>
