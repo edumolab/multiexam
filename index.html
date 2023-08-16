@@ -94,22 +94,6 @@ rel="stylesheet"
   }
   
 
-.footer-menu{
-    width: 100%;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    height: 60px;
-    z-index: 999;
-    position: fixed;
-    padding:0 5px;
-    bottom: 0;
-    left:0;
-    background-color: rgb(255, 255, 255);
-    box-shadow:0 -4px 5px rgba(177, 177, 177, 0.5);
-    border-top-left-radius:30px;
-    border-top-right-radius:30px;
-}
 
 .link{
   display: flex;
@@ -226,57 +210,28 @@ rel="stylesheet"
   }
 }
 
-video{
-  border: 1px solid transparent;
-  border-radius: 30px;
+.contact{
+  text-decoration: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white;
+  position: fixed;
+  right: 20px;
+  bottom: 15%;
+  color: dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:none;
 }
 
-.video-slider {
-  white-space: nowrap;
-  overflow-x: auto;
-}
-@media only screen and (max-width: 768px) {
-  /* Course Card Styles */
-   .video-slider {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    padding: 10px;
-  } 
-  video{
-  border: 1px solid transparent;
-  border-radius: 30px;
-  width:300px;
-  height: 300px;
-  height:auto;
-  background-color: #252352;  
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  overflow-x: scroll;
-  margin-right: 20px;
-  display: inline-block;
-  vertical-align: top;
-  color: #fff;
-}
-}
-    
-
-#transition{
-  display: none;
-  width: 100%;
-  height: 8000px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.8);
+.chat-icon{
+font-size: 40px;
+position: fixed;
+user-select: none;
 }
 
-#tr-text{
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  color: black;
-}
 
 body{
   background-color: #151436;
@@ -405,7 +360,7 @@ body{
         <button id="login" onclick="window.location.href='login.html'" class="btn btn-primary mx-2">Login</button>
         <button id="logout" onclick="logOut()" class="btn btn-primary mx-2">Logout</button>
     </nav>
-<div class="container" style="min-height:100vh">
+<div class="container">
     <div class="d-md-flex mt-5 pt-5 d-sm-block justify-content-center">
       <div class="row">  
         <h5 id="user" class="mt-2 text-white py-3">Welcome, Guest!</h5>
@@ -456,12 +411,11 @@ body{
 </div>
   
 
-
+<a href="https://t.me/edumo_admin" target="_blank" class="contact"><i class="chat-icon fas fa-comment-dots"></i></a>
 
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="64dc75cc69bc1fc81207d1b9" async></script>
 </body>
 </html>
